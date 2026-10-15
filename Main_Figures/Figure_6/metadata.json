@@ -1,0 +1,48 @@
+{
+  "kind": "PCA",
+  "height_mm": 125,
+  "groups": [
+    {
+      "key": "GP",
+      "label": "Galled petiole (GP)",
+      "color": "#0072B2",
+      "marker": "^"
+    },
+    {
+      "key": "UP",
+      "label": "Ungalled petiole (UP)",
+      "color": "#D55E00",
+      "marker": "o"
+    }
+  ],
+  "PC1_variance_percent": 73.05,
+  "PC2_variance_percent": 13.9,
+  "variance_precision": "Two-decimal values preserved from the original figure and original QC audit; no additional digits inferred.",
+  "transformation": "DESeq2 VST, blind = TRUE",
+  "pca_ntop": 500,
+  "coordinates_provenance": "Figure_6_source_data.tsv, independently matching plant_host_focused_refined_mask_PCA_coordinates.tsv.",
+  "sample_scope": "Three individual petioles per condition from one host tree during one sampling occasion.",
+  "x_limits": [
+    -62,
+    65
+  ],
+  "y_limits": [
+    -39,
+    49
+  ],
+  "x_ticks": [
+    -40,
+    0,
+    40
+  ],
+  "y_ticks": [
+    -40,
+    -20,
+    0,
+    20,
+    40
+  ],
+  "source_data": "Figure_6_source_data.tsv",
+  "output_stem": "Figure_6_revised",
+  "width_mm": 180
+}

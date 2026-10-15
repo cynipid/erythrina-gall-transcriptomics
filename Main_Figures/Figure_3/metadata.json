@@ -1,0 +1,90 @@
+{
+  "kind": "volcano",
+  "height_mm": 135,
+  "groups": [
+    {
+      "key": "Non-DE",
+      "label": "Non-DE",
+      "color": "#A7A9AC",
+      "marker": "o",
+      "zorder": 1
+    },
+    {
+      "key": "Larva-up",
+      "label": "Larva-up",
+      "color": "#009E73",
+      "marker": "o",
+      "zorder": 2
+    },
+    {
+      "key": "Pupa-up",
+      "label": "Pupa-up",
+      "color": "#CC79A7",
+      "marker": "o",
+      "zorder": 2
+    },
+    {
+      "key": "Not tested",
+      "label": "Not tested",
+      "color": "#7E57C2",
+      "marker": "x",
+      "zorder": 3
+    }
+  ],
+  "expected_status_counts": {
+    "Non-DE": 9509,
+    "Larva-up": 1909,
+    "Pupa-up": 2497,
+    "Not tested": 4
+  },
+  "positive_status": "Pupa-up",
+  "negative_status": "Larva-up",
+  "x_label": "$\\log_2$ fold change (Pupa / Larva)",
+  "coefficient_type": "Unshrunk DESeq2 log2FoldChange",
+  "DEG_rule": "padj < 0.01 AND abs(log2FoldChange) >= 1",
+  "source_table": "deseq2_pupa_vs_larva_all_genes.tsv",
+  "source_rows": 13919,
+  "plotted_rows": 13915,
+  "missing_adjusted_p_values": 4,
+  "unavailable_pvalue_reason": "Not inferred; missing adjusted P values also have missing raw P values.",
+  "legend_order": [
+    "Larva-up",
+    "Pupa-up",
+    "Non-DE",
+    "Not tested"
+  ],
+  "x_limits": [
+    -16,
+    17
+  ],
+  "y_limits": [
+    -1,
+    52
+  ],
+  "x_ticks": [
+    -10,
+    0,
+    10
+  ],
+  "y_ticks": [
+    0,
+    10,
+    20,
+    30,
+    40,
+    50
+  ],
+  "y_tick_labels": [
+    "0",
+    "10",
+    "20",
+    "30",
+    "40",
+    "\u226550"
+  ],
+  "y_cap": 50,
+  "not_tested_placement": "Omitted from plotted points; retained in source table.",
+  "source_data": "Figure_3_source_data.tsv",
+  "output_stem": "Figure_3_revised",
+  "width_mm": 180
+}

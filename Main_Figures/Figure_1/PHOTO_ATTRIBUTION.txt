@@ -1,0 +1,6 @@
+Photographic panel source:
+Lin, S.-F., Tung, G.-S., and Yang, M.-M. (2021). The Erythrina gall wasp Quadrastichus erythrinae (Insecta: Hymenoptera: Eulophidae): Invasion history, ecology, infestation and management. Forests 12(7), 948.
+https://doi.org/10.3390/f12070948
+Creative Commons Attribution 4.0 International (CC BY 4.0): https://creativecommons.org/licenses/by/4.0/
+
+The photographic panel is the existing cropped reproduction from Fig. 1B of Lin et al. (2021), extracted without changing its pixel values from the supplied Figure_1_corrected.pdf. Only the overlaid panel label is replaced by a larger vector letter. The experimental-design diagram and labels were redrawn on 2026-10-14. The photograph illustrates the gall system; it is not presented as a photograph of the sampled petioles.

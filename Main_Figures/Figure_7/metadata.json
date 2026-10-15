@@ -1,0 +1,86 @@
+{
+  "kind": "volcano",
+  "height_mm": 135,
+  "groups": [
+    {
+      "key": "Non-DE",
+      "label": "Non-DE",
+      "color": "#A7A9AC",
+      "marker": "o",
+      "zorder": 1
+    },
+    {
+      "key": "UP-up",
+      "label": "UP-up",
+      "color": "#D55E00",
+      "marker": "o",
+      "zorder": 2
+    },
+    {
+      "key": "GP-up",
+      "label": "GP-up",
+      "color": "#0072B2",
+      "marker": "o",
+      "zorder": 2
+    },
+    {
+      "key": "Not tested",
+      "label": "Not tested",
+      "color": "#7E57C2",
+      "marker": "x",
+      "zorder": 3
+    }
+  ],
+  "expected_status_counts": {
+    "Non-DE": 21032,
+    "UP-up": 1383,
+    "GP-up": 2147,
+    "Not tested": 172
+  },
+  "positive_status": "GP-up",
+  "negative_status": "UP-up",
+  "x_label": "$\\log_2$ fold change (GP / UP)",
+  "coefficient_type": "Unshrunk DESeq2 log2FoldChange",
+  "DEG_rule": "padj < 0.01 AND abs(log2FoldChange) >= 1",
+  "source_table": "plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_eggnog_joined.tsv",
+  "source_rows": 24734,
+  "plotted_rows": 24734,
+  "missing_adjusted_p_values": 172,
+  "unavailable_pvalue_reason": "Not inferred; missing adjusted P values also have missing raw P values.",
+  "legend_order": [
+    "UP-up",
+    "GP-up",
+    "Non-DE",
+    "Not tested"
+  ],
+  "x_limits": [
+    -12.5,
+    18
+  ],
+  "y_limits": [
+    -0.8,
+    38.5
+  ],
+  "x_ticks": [
+    -10,
+    0,
+    10
+  ],
+  "y_ticks": [
+    0,
+    10,
+    20,
+    30
+  ],
+  "y_tick_labels": [
+    "0",
+    "10",
+    "20",
+    "30"
+  ],
+  "y_cap": null,
+  "not_tested_placement": "Purple crosses at y = 0 solely for display; no P value imputed.",
+  "source_data": "Figure_7_source_data.tsv",
+  "output_stem": "Figure_7_revised",
+  "width_mm": 180
+}

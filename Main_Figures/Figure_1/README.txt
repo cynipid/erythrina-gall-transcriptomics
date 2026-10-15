@@ -1,0 +1,1 @@
+Figure 1 uses the approved 15 October 2026 design. Run Figure_1_plotting_script.py with the adjacent Figure_1_photo.png. Photo attribution and license are recorded in PHOTO_ATTRIBUTION.txt. Use caption.txt for the final shortened manuscript caption. Generated outputs are Figure_1_corrected.pdf and Figure_1_revised_20261015.png.
