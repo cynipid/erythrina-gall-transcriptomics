@@ -1,0 +1,49 @@
+===== REFINED-MASK HOST-FOCUSED PLANT DESEQ2 INTEGRITY AUDIT =====
+Discovery root: /home/dodi/projects/qe_cross_species_discovery
+
+Refined mask genes: 16404
+Expanded-mask tested genes: 24931
+Refined-mask tested genes: 24734
+Tested genes removed directly by coding-denominator additions: 197
+
+Expanded 16,112-mask statuses:
+  GP_up: 2349
+  UP_up: 1386
+  non_DE: 21022
+  NA_padj_not_testable: 174
+
+Refined 16,404-mask statuses:
+  GP_up: 2147
+  UP_up: 1383
+  non_DE: 21032
+  NA_padj_not_testable: 172
+
+Direct removals by expanded-mask status:
+  GP_up: 192
+  UP_up: 0
+  non_DE: 3
+  NA_padj_not_testable: 2
+Retained genes changing status after refit: 15
+
+Nonzero expanded-to-refined transitions:
+  GP_up -> GP_up: 2146
+  GP_up -> non_DE: 11
+  GP_up -> removed_by_refined_coding_denominator_mask: 192
+  UP_up -> UP_up: 1383
+  UP_up -> non_DE: 3
+  non_DE -> GP_up: 1
+  non_DE -> non_DE: 21018
+  non_DE -> removed_by_refined_coding_denominator_mask: 3
+  NA_padj_not_testable -> NA_padj_not_testable: 172
+  NA_padj_not_testable -> removed_by_refined_coding_denominator_mask: 2
+
+Masked genes retained in refined results: 0
+Result/count identifier agreement: PASS
+R input MD5 verification: PASS
+Input SHA-256 verification after audit: PASS
+Errors detected: 0
+
+Interpretive boundary:
+  This audit verifies computation and membership only; it does not revise the frozen mask.
+  No sequence search, DESeq2 fitting, annotation search or reranking was performed.
+REFINED-MASK HOST-FOCUSED PLANT DESEQ2 INTEGRITY AUDIT: PASS

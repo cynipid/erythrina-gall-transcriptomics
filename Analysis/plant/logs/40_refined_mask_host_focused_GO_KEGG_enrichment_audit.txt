@@ -1,0 +1,29 @@
+===== REFINED-MASK HOST-FOCUSED PLANT GO/KEGG ENRICHMENT =====
+Refined-mask DESeq2 rows: 24734
+Genes with valid padj: 24562
+Official GP-up genes: 2147
+Official UP-up genes: 1383
+Background: valid-padj genes with the corresponding GO or canonical KEGG annotation.
+Test: one-sided Fisher exact over-representation; minimum five background genes per category.
+Multiple testing: BH correction independently for GP-GO, UP-GO, GP-KEGG and UP-KEGG.
+Significant enrichment: BH-adjusted P < 0.05.
+Canonical KEGG correction: map00072->map00650 and map01130->map01110 before deduplication.
+
+GP GO annotation-eligible foreground: 833
+UP GO annotation-eligible foreground: 570
+GO background genes: 11430
+GO categories tested: 5667
+Significant GP-up GO categories: 77
+Significant UP-up GO categories: 33
+
+GP KEGG annotation-eligible foreground: 431
+UP KEGG annotation-eligible foreground: 239
+KEGG background genes: 5987
+Canonical KEGG categories tested: 358
+Significant GP-up KEGG categories: 6
+Significant UP-up KEGG categories: 3
+
+Earlier enrichment outputs were preserved; no DESeq2 fitting or DEG reclassification was performed.
+Input MD5 verification after output generation: PASS
+Errors detected: 0
+REFINED-MASK HOST-FOCUSED PLANT GO/KEGG ENRICHMENT: PASS

@@ -1,0 +1,37 @@
+===== REFINED-MASK HOST-FOCUSED PLANT DESEQ2 FINAL ANALYSIS =====
+Discovery root: //wsl.localhost/Ubuntu/home/dodi/projects/qe_cross_species_discovery
+
+Scope:
+  One final host-focused refit using the frozen refined 16,404-gene mask.
+  No sequence search, annotation search or candidate-family search was performed.
+  All mixed, 3,948-mask and 16,112-mask results were preserved unchanged.
+
+Frozen model:
+  tximport gene-level input; DESeq2 design ~ condition; S (UP) reference; SG (GP) contrast.
+  Low-count filter: expected count >=10 in at least 3 samples.
+  Reporting threshold: padj <0.01 and absolute log2FoldChange >=1.
+  No log2-fold-change shrinkage was applied.
+
+tximport genes before mask: 118082
+Frozen expanded nucleotide mask: 16112
+Additional coding-denominator-supported mask: 292
+Refined mask total: 16404
+Additional candidates removed from expanded tested universe: 197
+Additional candidates already outside expanded tested universe: 95
+Genes after mask before low-count filtering: 101678
+Genes after frozen low-count filter: 24734
+
+Refined-mask host-focused DESeq2 statuses:
+  GP_up: 2147
+  UP_up: 1383
+  non_DE: 21032
+  NA_padj_not_testable: 172
+
+Interpretive boundary:
+  The refined mask is sequence-provenance based and does not prove physical RNA source.
+  This remains an analysis of the same six libraries, not an independent replication.
+  The 16,404-gene mask is frozen; no further provenance-driven mask expansion is planned.
+
+Input MD5 verification after output generation: PASS
+Errors detected: 0
+REFINED-MASK HOST-FOCUSED PLANT DESEQ2 FINAL ANALYSIS: PASS

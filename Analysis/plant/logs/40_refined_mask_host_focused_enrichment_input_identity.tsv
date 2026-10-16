@@ -1,0 +1,5 @@
+input_role	path	md5
+refined_mask_DESeq2_eggnog	//wsl.localhost/Ubuntu/home/dodi/projects/qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_eggnog_joined.tsv	af748f8944c83b39949a514a3d9f0fb8
+GO_mapping	//wsl.localhost/Ubuntu/home/dodi/projects/qe_plant_denovo/04_enrichment/primary_FDR001_LFC1/go/plant_tested_gene_to_GO.tsv	4ecdfc6e5c74af8e98d09d28a9b3a442
+KEGG_mapping	//wsl.localhost/Ubuntu/home/dodi/projects/qe_plant_denovo/04_enrichment/primary_FDR001_LFC1/kegg/plant_tested_gene_to_KEGG_pathway_canonical.tsv	7bd9d1630698d49f3988b142c33c189d
+KEGG_lookup	//wsl.localhost/Ubuntu/home/dodi/projects/qe_plant_denovo/04_enrichment/kegg/KEGG_reference_pathway_lookup.tsv	2e1b96a5d5cea6d5ed5d0a6e2fc4f2e7

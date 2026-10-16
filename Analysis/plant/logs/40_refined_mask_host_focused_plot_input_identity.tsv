@@ -1,0 +1,3 @@
+input	path	MD5
+refined_mask_dds	//wsl.localhost/Ubuntu/home/dodi/projects/qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_dds_host_focused_refined_mask.rds	1d293192a8816f5a94eebe0d4a03bbd8
+refined_mask_DESeq2_results	//wsl.localhost/Ubuntu/home/dodi/projects/qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_all.tsv	308d1098912382103849a6d7e78286d1

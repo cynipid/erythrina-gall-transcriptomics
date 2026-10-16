@@ -1,0 +1,33 @@
+===== REFINED-MASK FINAL PLANT DOWNSTREAM REFRESH =====
+Authoritative refined-mask DESeq2 result: 24734 tested genes; 2147 GP-up; 1383 UP-up.
+No DESeq2 fitting, DEG reclassification, sequence search, annotation search or candidate-family search was performed.
+Optional discovery ranking was not rebuilt.
+
+Completed sections:
+  Frozen eggNOG annotation join: PASS
+  QC/PCA/correlation/MA/volcano refresh: PASS
+  GO/canonical-KEGG enrichment refresh: PASS
+  Current-resolved GO manuscript curation: PASS
+  Frozen plant-defense candidate status overlay: PASS
+
+Significant enrichment categories (BH < 0.05):
+  GP_GO: 77
+  UP_GO: 33
+  GP_KEGG: 6
+  UP_KEGG: 3
+
+GO manuscript interpretation sets:
+  GP_up: 66 current-resolved of 77 statistically significant
+  UP_up: 28 current-resolved of 33 statistically significant
+
+Final defense-candidate statuses:
+  GP_up: 86
+  NA_padj_not_testable: 14
+  UP_up: 28
+  excluded_by_refined_sequence_mask: 3
+  non_DE: 518
+  not_in_refined_mask_host_focused_tested_universe: 157
+
+Frozen-input MD5 verification after output generation: PASS
+Errors detected: 0
+REFINED-MASK FINAL PLANT DOWNSTREAM REFRESH: PASS

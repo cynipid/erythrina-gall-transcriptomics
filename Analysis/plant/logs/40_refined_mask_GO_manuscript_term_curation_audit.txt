@@ -1,0 +1,9 @@
+===== REFINED-MASK GO MANUSCRIPT TERM CURATION =====
+Scope: post-statistical curation only; no ORA or BH recalculation.
+Full statistical enrichment tables were preserved unchanged.
+
+GP_up significant/current-resolved: 77 / 66
+UP_up significant/current-resolved: 33 / 28
+Original Fisher P-values and BH-adjusted P-values retained unchanged: PASS
+Errors detected: 0
+REFINED-MASK GO MANUSCRIPT TERM CURATION: PASS

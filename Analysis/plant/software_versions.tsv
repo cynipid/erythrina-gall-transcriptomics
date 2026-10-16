@@ -1,0 +1,8 @@
+software	version	evidence
+R	4.6.1	38 and 40 retained sessionInfo; Windows 11 x64
+DESeq2	1.52.0	38 and 40 retained sessionInfo
+tximport	1.40.0	38 and 40 retained sessionInfo
+SummarizedExperiment	1.42.0	38 and 40 retained sessionInfo
+ggplot2	4.0.3	38 and 40 retained sessionInfo
+AnnotationDbi	1.74.0	38 and 40 retained sessionInfo
+GO.db	3.23.1	38 and 40 retained sessionInfo

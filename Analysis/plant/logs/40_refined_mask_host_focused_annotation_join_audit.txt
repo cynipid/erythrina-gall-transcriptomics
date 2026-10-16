@@ -1,0 +1,11 @@
+===== REFINED-MASK HOST-FOCUSED PLANT EGGNOG ANNOTATION JOIN =====
+Refined-mask DESeq2 genes: 24734
+Frozen eggNOG donor rows: 28189
+Genes with annotation-donor match: 24734
+Genes without annotation-donor match: 0
+Genes marked with eggNOG annotation: 18889
+Annotation columns transferred: 25
+DESeq2 field preservation: PASS
+Duplicate output columns: 0
+Errors detected: 0
+REFINED-MASK HOST-FOCUSED PLANT EGGNOG ANNOTATION JOIN: PASS

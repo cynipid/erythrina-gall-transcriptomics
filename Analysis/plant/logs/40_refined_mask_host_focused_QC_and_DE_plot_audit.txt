@@ -1,0 +1,19 @@
+===== REFINED-MASK HOST-FOCUSED PLANT QC AND DE PLOT BUILD =====
+Refined-mask genes represented in DESeq2 object: 24734
+Sample labels: S7->GP1, S8->GP2, S9->GP3, S10->UP1, S11->UP2, S12->UP3
+Legacy metadata translation: SG=GP and S=UP
+Transformation: DESeq2 vst(blind=TRUE), used only for unsupervised QC.
+PCA genes used: 500
+PC1 variance: 73.05%
+PC2 variance: 13.90%
+PCA labels: deterministic separated offsets with leader lines; sample coordinates unchanged.
+Correlation: Pearson correlation across all VST-transformed tested genes.
+GP-up: 2147
+UP-up: 1383
+Non-DE: 21032
+Not tested (NA padj): 172
+Colours: GP #0072B2; UP #D55E00; non-DE #BDBDBD; not tested #7A7A7A
+No DESeq2 fitting, filtering, shrinkage or DEG reclassification was performed.
+Input MD5 verification after output generation: PASS
+Errors detected: 0
+REFINED-MASK HOST-FOCUSED PLANT QC AND DE PLOT BUILD: PASS
