@@ -1,0 +1,36 @@
+{
+  "manifest_matches": 57,
+  "manifest_files_not_selected_for_upload": [
+    "02_figures/MEROPS_cross_species_quantitative_figure_curated_v2.pdf",
+    "02_figures/MEROPS_cross_species_quantitative_figure_curated_v2.png",
+    "02_figures/MEROPS_cross_species_quantitative_figure_curated_v2.svg",
+    "02_figures/MEROPS_cross_species_quantitative_figure_curated_v2_audit.tsv",
+    "02_figures/MEROPS_panel_A_insect_family_status_v2.pdf",
+    "02_figures/MEROPS_panel_A_insect_family_status_v2.png",
+    "02_figures/MEROPS_panel_B_larva_candidates_v2.pdf",
+    "02_figures/MEROPS_panel_B_larva_candidates_v2.png",
+    "02_figures/MEROPS_panel_C_plant_candidates_v2.pdf",
+    "02_figures/MEROPS_panel_C_plant_candidates_v2.png",
+    "02_figures/MEROPS_panel_D_insect_stage_bias_v2.pdf",
+    "02_figures/MEROPS_panel_D_insect_stage_bias_v2.png",
+    "06_logs/01_diamond_makedb.log",
+    "06_logs/02_insect_diamond_vs_merops.log",
+    "06_logs/03_plant_secretome_diamond_vs_merops.log",
+    "06_logs/07_merops_reparse_curation_v2.log",
+    "07_project_control/README_organization_status.txt",
+    "07_project_control/active_project_inventory_20260912.tsv",
+    "99_archive_superseded/README.txt"
+  ],
+  "all_selected_manifest_hashes_match": true,
+  "insect_homologue_genes": 149,
+  "larval_shortlist_genes": 9,
+  "larval_shortlist_matches_Figure_10B": true,
+  "historical_plant_priority_genes": 20,
+  "final_GP_up_priority_genes": 19,
+  "final_priority_matches_Figure_10C": true,
+  "historical_priority_now_non_DE": [
+    "TRINITY_DN12519_c0_g1"
+  ],
+  "python_syntax_checks": 4,
+  "limits": "No searches, annotation, enrichment, prediction or statistical model was rerun. Other historical plant candidate statuses are not refreshed by the 20-row overlay."
+}
