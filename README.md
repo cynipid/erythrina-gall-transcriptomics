@@ -2,7 +2,7 @@
 
 Repository: https://github.com/cynipid/erythrina-gall-transcriptomics
 
-**Preparation draft: figure reproduction package and retained plant analysis scripts. Fourteen frozen plant inputs/checkpoints, plant scripts and execution logs are included. Insect source scripts are also included. Path portability, earlier audit dependencies and additional insect annotation/MEROPS inputs and primary execution records remain incomplete. Selected insect inputs and a retained QC session are now included.**
+**Preparation draft: figure reproduction package and retained plant analysis scripts. Fourteen frozen plant inputs/checkpoints, plant scripts and execution logs are included. Insect source scripts are also included. Path portability, earlier audit dependencies and path configuration and some execution/audit dependencies remain incomplete. Annotation/MEROPS resources and their version distinctions are documented. Selected insect inputs and a retained QC session are now included.**
 
 Associated study: *Parallel transcriptomics reveals insect developmental shifts and gall-associated host transcriptional differences in Quadrastichus erythrinae and Erythrina variegata*.
 
@@ -15,6 +15,7 @@ Samples were collected from one *Erythrina variegata* tree at Academia Sinica, T
 ## Contents
 
 - `Main_Figures/Figure_1` through `Figure_10`: plotting scripts, direct source tables, metadata and required inputs.
+- `Analysis/annotations_merops/`: original annotation outputs/mappings and the historical curated-v2 MEROPS snapshot, with a final-status overlay for the 20 historical plant priority candidates.
 - `Analysis/insect/`: original Slurm, DESeq2/enrichment/candidate and prediction-classification scripts, plus blind=TRUE QC sensitivity code.
 - `Analysis/plant/`: 40 retained source scripts, a stage map, required-input documentation and checksums. Scripts 38–40 define the final refined-mask branch; scripts 27/28 are dependencies of script 40.
 - `rebuild_all.py`: rebuilds the ten main figures using the adjacent files.
@@ -45,7 +46,7 @@ Final insect results: 4,406 DEGs = 1,909 larva-up + 2,497 pupa-up. Final plant r
 
 GEO/SRA deposition is in preparation. No accession has been assigned in this draft. Raw FASTQ files, large sequence files and processed count matrices are not included here. Repository release, commit and public-access details must be finalized before citing code availability in the manuscript.
 
-This package supports figure reproduction from supplied source data. It is not a complete raw-read-to-results pipeline. The final refined-mask plant scripts are included under `Analysis/plant/`; 14 frozen input/checkpoint files and retained final execution logs/session records are included, with checksum verification. Earlier audit dependencies and path portability remain documented limitations. Insect source scripts are included; selected count/QC/prediction inputs and a QC session record are included; additional annotation/MEROPS resources and primary execution records still require consolidation or links to deposited files. Earlier plant scripts are explicitly identified by stage; they do not supersede the final workflow.
+This package supports figure reproduction from supplied source data. It is not a complete raw-read-to-results pipeline. The final refined-mask plant scripts are included under `Analysis/plant/`; 14 frozen input/checkpoint files and retained final execution logs/session records are included, with checksum verification. Earlier audit dependencies and path portability remain documented limitations. Insect source scripts are included; selected count/QC/prediction inputs and a QC session record are included; annotation/MEROPS source resources are now included under `Analysis/annotations_merops`; some primary execution records and dependencies remain incomplete. Earlier plant scripts are explicitly identified by stage; they do not supersede the final workflow.
 
 ## Attribution and licensing
 

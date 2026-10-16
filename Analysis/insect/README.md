@@ -1,55 +1,49 @@
-# Erythrina gall transcriptomics
+# Insect analysis source archive
 
-Repository: https://github.com/cynipid/erythrina-gall-transcriptomics
+Twenty-seven source files are preserved byte-for-byte from `EGW_insect_scripts_for_review.tar.gz`, supplied by the author on 16 October 2026. No scripts were executed or jobs submitted during packaging. `script_inventory.tsv` records identities and syntax-check limits.
 
-**Preparation draft: figure reproduction package and retained plant analysis scripts. Fourteen frozen plant inputs/checkpoints, plant scripts and execution logs are included. Insect source scripts are also included. Path portability, earlier audit dependencies and path configuration and some execution/audit dependencies remain incomplete. Annotation/MEROPS resources and their version distinctions are documented. Selected insect inputs and a retained QC session are now included.**
+## Contents and roles
 
-Associated study: *Parallel transcriptomics reveals insect developmental shifts and gall-associated host transcriptional differences in Quadrastichus erythrinae and Erythrina variegata*.
+- `90_manuscript_release/06_current_scripts/truba_slurm`: five retained Slurm job scripts for input checks, container construction, STAR indexing/alignment and featureCounts strand comparisons.
+- `90_manuscript_release/06_current_scripts/deseq2_enrichment_candidates`: twenty R scripts covering differential expression, annotation, GO/KEGG enrichment, candidate inventories and historical plotting.
+- `90_manuscript_release/06_current_scripts/signalp_deeptmhmm`: one custom script classifying existing SignalP/DeepTMHMM prediction outputs.
+- `07_deseq2/insect_blind_TRUE_QC_sensitivity_RStudio.R`: additional reviewer-requested QC sensitivity script.
 
-Author: Serdar Dinç. ORCID: https://orcid.org/0000-0002-8920-2738
+No installed SignalP package, model weights or third-party source distribution is included. The custom classification script operates on frozen prediction tables; it does not run SignalP or DeepTMHMM predictions.
 
-## Study design
+## Final analysis conventions
 
-Samples were collected from one *Erythrina variegata* tree at Academia Sinica, Taipei, Taiwan, on one sampling occasion in November 2020. Insect comparisons comprise three larval and three pupal pools, with ten individuals per pool. Plant comparisons comprise three galled petioles (GP) and three ungalled petioles (UP), with each whole petiole serving as a replicate. The two comparisons were analyzed separately; parallel functional themes do not establish direct molecular interactions.
+The primary script `02_run_deseq2_primary_FDR001_LFC1.R` constructs a DESeq2 dataset with `~ stage`, retains genes with total counts >=10 across six libraries, fits DESeq2 and extracts pupa versus larva with `alpha=0.01`. Reporting requires padj <0.01 and |unshrunk log2FoldChange| >=1. Positive values indicate pupa-up expression. The final manuscript result is 4,406 DEGs: 1,909 larva-up and 2,497 pupa-up; 13,919 genes are retained, including four unavailable adjusted P values. These output controls have not been recalculated in this script-only review.
 
-## Contents
+The archived STAR index job specifies `sjdbOverhang=149` and `genomeSAindexNbases=13`. The alignment job supplies `readFilesCommand=zcat` and `outSAMtype=BAM Unsorted`; it does not explicitly specify STAR two-pass mode. The featureCounts job compares strand settings 0, 1 and 2, using `-p --countReadPairs -B -C -F GFF -t exon -g locus_tag`; the manuscript uses reverse-stranded counts (`-s 2`). Script presence alone does not establish installed tool versions or historical execution.
 
-- `Main_Figures/Figure_1` through `Figure_10`: plotting scripts, direct source tables, metadata and required inputs.
-- `Analysis/annotations_merops/`: original annotation outputs/mappings and the historical curated-v2 MEROPS snapshot, with a final-status overlay for the 20 historical plant priority candidates.
-- `Analysis/insect/`: original Slurm, DESeq2/enrichment/candidate and prediction-classification scripts, plus blind=TRUE QC sensitivity code.
-- `Analysis/plant/`: 40 retained source scripts, a stage map, required-input documentation and checksums. Scripts 38–40 define the final refined-mask branch; scripts 27/28 are dependencies of script 40.
-- `rebuild_all.py`: rebuilds the ten main figures using the adjacent files.
-- `requirements.txt`: Python plotting dependencies, with versions retained from the figure package where recorded. Pillow is additionally required for the approved Figure 1; its historical version is not specified.
-- `docs/source_provenance.tsv`: original local source and SHA-256 for copied files. These paths document provenance, not runtime dependencies.
-- `docs/RELEASE_CHECKLIST.md`: remaining tasks before a manuscript release.
+The custom secretory-pathway classifier specifies 13,455 proteins and expects 2,039 classical-secretory-pathway candidates; downstream-TMR and discordant cases are excluded from its primary group. This prediction classification does not establish secretion or effector activity experimentally.
 
-The 15 October Figure 1 supersedes the earlier design. Figure 9 retains `TRINITY_DN27036_c0_g1` and includes its source-data TSV. Plotting uses existing estimates; it does not rerun differential expression, enrichment, secretion prediction or MEROPS analyses.
+## Sample identifiers
 
-## Reproduce the figures
+| Original sample | Manuscript label |
+| --- | --- |
+| L1 | L1 |
+| L3 | L2 |
+| L4 | L3 |
+| P3 | P1 |
+| P4 | P2 |
+| P5 | P3 |
 
-Use Python 3 in a separate environment. From the repository folder:
+Original filenames and metadata identifiers remain unchanged. The sensitivity script records this display mapping and compares blind=TRUE QC with the retained primary blind=FALSE transformation; it does not refit the primary differential-expression model.
 
-```bash
-python -m pip install -r requirements.txt
-python rebuild_all.py
-```
+## Inputs, paths and pending consolidation
 
-PDF and PNG outputs are written within each figure folder. PCA panels use frozen coordinates; rebuilding them does not refit DESeq2. Figure 9 may regenerate its source-data table from the included frozen candidate overlay.
+The primary DESeq2 script requires `qe_genome_guided/06_counts/gene_counts_matrix.tsv` and `sample_metadata.tsv`. The sensitivity script additionally requires `08_results_primary/insect_gene_vsd.rds`. The prediction classifier requires `11_signalp_tmhmm/results/signalp6_deeptmhmm_genomewide_13455.tsv`. Annotation and enrichment scripts require their named annotation/mapping inputs. These four named inputs and a retained QC R-session record are now provided under `inputs/`; see its README and verification report. Additional annotation/enrichment inputs and primary-analysis execution records remain to be consolidated.
 
-## Frozen result conventions
+Slurm jobs retain the original `/arf/scratch/sdinc/qe_rnaseq_truba` paths and scheduler settings. Several R scripts use the author's Windows-to-WSL project path. The container build job refers to a local sandbox not supplied here. These are original execution records, not portable jobs ready to submit from a repository checkout. No versions have been inferred from filenames or container names.
 
-Differential-expression criterion: adjusted P < 0.01 and absolute unshrunk log2 fold change >= 1. Insect contrast is pupa versus larva; positive coefficients indicate pupa-up expression. Plant contrast is GP versus UP; positive coefficients indicate GP-up expression.
+Current manuscript figure reproduction is provided separately under `Main_Figures`; those scripts supersede historical plotting layouts in this source archive. MEROPS and other cross-system resources still require separate consolidation. This addition does not constitute a complete raw-read-to-results workflow.
 
-Final insect results: 4,406 DEGs = 1,909 larva-up + 2,497 pupa-up. Final plant results: 3,530 DEGs = 2,147 GP-up + 1,383 UP-up, after exclusion of the frozen 16,404-gene mask. The plant result universe contains 24,734 genes, including 172 with unavailable adjusted P values. Older plant results must not be substituted.
+## Packaging verification
 
-## Data and code availability status
+The one Python file passed syntax parsing. All five Slurm files passed `bash -n` syntax checks. R was unavailable for syntax parsing. Source files were copied unchanged and SHA-256 values recorded. No DESeq2, enrichment, alignment, featureCounts, SignalP, DeepTMHMM or MEROPS analysis was run.
 
-GEO/SRA deposition is in preparation. No accession has been assigned in this draft. Raw FASTQ files, large sequence files and processed count matrices are not included here. Repository release, commit and public-access details must be finalized before citing code availability in the manuscript.
+## Supplied input checks
 
-This package supports figure reproduction from supplied source data. It is not a complete raw-read-to-results pipeline. The final refined-mask plant scripts are included under `Analysis/plant/`; 14 frozen input/checkpoint files and retained final execution logs/session records are included, with checksum verification. Earlier audit dependencies and path portability remain documented limitations. Insect source scripts are included; selected count/QC/prediction inputs and a QC session record are included; annotation/MEROPS source resources are now included under `Analysis/annotations_merops`; some primary execution records and dependencies remain incomplete. Earlier plant scripts are explicitly identified by stage; they do not supersede the final workflow.
-
-## Attribution and licensing
-
-The Figure 1 photograph is reproduced from Lin, Tung and Yang (2021), *Forests* 12, 948, Fig. 1B, under CC BY 4.0; see `Main_Figures/Figure_1/PHOTO_ATTRIBUTION.txt`. https://doi.org/10.3390/f12070948
-
-A software license for the author's code has not yet been selected. The photograph retains its own license. Third-party software retains its respective licenses.
+All six count columns match the prepared GEO source exactly, metadata agree, and the 13,919-gene low-count-filtered universe matches the main Figure 3 source. The objective prediction table matches the classifier input SHA-256. `software_versions.tsv` explicitly limits the recovered R versions to the retained QC session.
