@@ -12,4 +12,4 @@ Read-only checks found 14,966 count rows and six columns matching the sample met
 
 The retained `R_session_info.txt` documents the reviewer-requested blind=TRUE QC environment: R 4.6.1, DESeq2 1.52.0, ggplot2 4.0.3 and SummarizedExperiment 1.42.0, on Windows 11 x64. It does not establish historical STAR, SAMtools, featureCounts or prediction-tool versions. The VST RDS is retained byte-for-byte but was not loaded into R during this review.
 
-This is a selected input bundle. Annotation mappings, candidate source data, retained primary result/environment records and MEROPS resources are not supplied by these five files. The repository is not yet a complete insect analysis execution bundle.
+This is a selected input bundle. These five files alone do not supply annotation mappings, candidate source data, retained primary result/environment records or MEROPS resources. See `Analysis/annotations_merops/` and `Main_Figures/` for the additional resources included elsewhere in the repository. The repository is not yet a complete insect analysis execution bundle.

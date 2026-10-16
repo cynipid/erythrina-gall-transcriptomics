@@ -34,11 +34,11 @@ Original filenames and metadata identifiers remain unchanged. The sensitivity sc
 
 ## Inputs, paths and pending consolidation
 
-The primary DESeq2 script requires `qe_genome_guided/06_counts/gene_counts_matrix.tsv` and `sample_metadata.tsv`. The sensitivity script additionally requires `08_results_primary/insect_gene_vsd.rds`. The prediction classifier requires `11_signalp_tmhmm/results/signalp6_deeptmhmm_genomewide_13455.tsv`. Annotation and enrichment scripts require their named annotation/mapping inputs. These four named inputs and a retained QC R-session record are now provided under `inputs/`; see its README and verification report. Additional annotation/enrichment inputs and primary-analysis execution records remain to be consolidated.
+The primary DESeq2 script requires `qe_genome_guided/06_counts/gene_counts_matrix.tsv` and `sample_metadata.tsv`. The sensitivity script additionally requires `08_results_primary/insect_gene_vsd.rds`. The prediction classifier requires `11_signalp_tmhmm/results/signalp6_deeptmhmm_genomewide_13455.tsv`. Annotation and enrichment scripts require their named annotation/mapping inputs. These four named inputs and a retained QC R-session record are now provided under `inputs/`; see its README and verification report. Additional annotation/enrichment resources are supplied separately under `Analysis/annotations_merops/`; some runtime dependencies and primary-analysis execution records remain outside the package.
 
 Slurm jobs retain the original `/arf/scratch/sdinc/qe_rnaseq_truba` paths and scheduler settings. Several R scripts use the author's Windows-to-WSL project path. The container build job refers to a local sandbox not supplied here. These are original execution records, not portable jobs ready to submit from a repository checkout. No versions have been inferred from filenames or container names.
 
-Current manuscript figure reproduction is provided separately under `Main_Figures`; those scripts supersede historical plotting layouts in this source archive. MEROPS and other cross-system resources still require separate consolidation. This addition does not constitute a complete raw-read-to-results workflow.
+Current manuscript figure reproduction is provided separately under `Main_Figures`; those scripts supersede historical plotting layouts in this source archive. MEROPS and annotation resources are documented separately under `Analysis/annotations_merops/`. This addition does not constitute a complete raw-read-to-results workflow.
 
 ## Packaging verification
 

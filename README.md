@@ -1,55 +1,76 @@
 # Erythrina gall transcriptomics
 
+Code and supporting analysis resources for *Parallel transcriptomics reveals insect developmental shifts and gall-associated host transcriptional differences in Quadrastichus erythrinae and Erythrina variegata*.
+
+Author: Serdar Dinç. [ORCID](https://orcid.org/0000-0002-8920-2738).
+
 Repository: https://github.com/cynipid/erythrina-gall-transcriptomics
 
-**Preparation draft: figure reproduction package and retained plant analysis scripts. Fourteen frozen plant inputs/checkpoints, plant scripts and execution logs are included. Insect source scripts are also included. Path portability, earlier audit dependencies and path configuration and some execution/audit dependencies remain incomplete. Annotation/MEROPS resources and their version distinctions are documented. Selected insect inputs and a retained QC session are now included.**
+## Data deposition
 
-Associated study: *Parallel transcriptomics reveals insect developmental shifts and gall-associated host transcriptional differences in Quadrastichus erythrinae and Erythrina variegata*.
+The study and its 12 samples have been approved by NCBI GEO under [GSE351178](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE351178). The deposit includes the raw RNA-seq reads, insect featureCounts table, six plant RSEM gene-level abundance tables, full plant Trinity assembly, the 16,404-gene mask-membership table and sample crosswalk documentation. Raw-read transfer to SRA is pending as of 17 October 2026; SRA links will be available through the GEO record after processing.
 
-Author: Serdar Dinç. ORCID: https://orcid.org/0000-0002-8920-2738
+GEO records are currently private, with a scheduled public release of 16 October 2027. The release date must be advanced if a publication or preprint citing the accession becomes public earlier. Reviewer access is provided separately to the journal and is not stored in this repository.
 
 ## Study design
 
-Samples were collected from one *Erythrina variegata* tree at Academia Sinica, Taipei, Taiwan, on one sampling occasion in November 2020. Insect comparisons comprise three larval and three pupal pools, with ten individuals per pool. Plant comparisons comprise three galled petioles (GP) and three ungalled petioles (UP), with each whole petiole serving as a replicate. The two comparisons were analyzed separately; parallel functional themes do not establish direct molecular interactions.
+Samples originated from one *Erythrina variegata* tree at Academia Sinica, Taipei, Taiwan, during one sampling occasion in November 2020. Insect comparisons comprise three larval and three pupal pools, with ten individuals per pool, each from a different galled petiole. Plant comparisons comprise three galled petioles (GP) and three ungalled petioles (UP), with each whole petiole serving as a replicate. The two comparisons were analyzed separately. Parallel functional themes do not establish direct molecular interactions.
 
-## Contents
+## Repository contents
 
-- `Main_Figures/Figure_1` through `Figure_10`: plotting scripts, direct source tables, metadata and required inputs.
-- `Analysis/annotations_merops/`: original annotation outputs/mappings and the historical curated-v2 MEROPS snapshot, with a final-status overlay for the 20 historical plant priority candidates.
-- `Analysis/insect/`: original Slurm, DESeq2/enrichment/candidate and prediction-classification scripts, plus blind=TRUE QC sensitivity code.
-- `Analysis/plant/`: 40 retained source scripts, a stage map, required-input documentation and checksums. Scripts 38–40 define the final refined-mask branch; scripts 27/28 are dependencies of script 40.
-- `rebuild_all.py`: rebuilds the ten main figures using the adjacent files.
-- `requirements.txt`: Python plotting dependencies, with versions retained from the figure package where recorded. Pillow is additionally required for the approved Figure 1; its historical version is not specified.
-- `docs/source_provenance.tsv`: original local source and SHA-256 for copied files. These paths document provenance, not runtime dependencies.
-- `docs/RELEASE_CHECKLIST.md`: remaining tasks before a manuscript release.
+| Location | Contents |
+| --- | --- |
+| `Main_Figures/Figure_1` through `Figure_10` | Current plotting scripts, direct figure-source data and required inputs. |
+| `Analysis/plant/` | Forty original scripts, 14 compressed inputs/checkpoints, final-branch execution logs and version records. |
+| `Analysis/insect/` | Twenty-seven original scripts, selected count/QC/prediction inputs and a retained QC session record. |
+| `Analysis/annotations_merops/` | Eighty-two annotation/MEROPS source files and a final-status overlay for historical plant priority candidates. |
+| `docs/source_provenance.tsv` | Original source paths and identities; these are provenance records, not runtime dependencies. |
+| `docs/VERIFICATION.txt` | Recorded packaging and figure-rebuild checks with their limits. |
+| `docs/RELEASE_CHECKLIST.md` | Tasks remaining before the manuscript release. |
+| `SHA256SUMS.txt` | SHA-256 identities of repository files, excluding this checksum file itself. |
 
-The 15 October Figure 1 supersedes the earlier design. Figure 9 retains `TRINITY_DN27036_c0_g1` and includes its source-data TSV. Plotting uses existing estimates; it does not rerun differential expression, enrichment, secretion prediction or MEROPS analyses.
+Raw FASTQ reads and the complete plant assembly are deposited through GEO rather than included here. Selected analysis count tables, intermediate objects and annotation resources are included in compressed form; consult each analysis README and manifest for exact contents.
 
-## Reproduce the figures
+## Reproduce the main figures
 
-Use Python 3 in a separate environment. From the repository folder:
+Use Python 3 in a separate environment. From the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
 python rebuild_all.py
 ```
 
-PDF and PNG outputs are written within each figure folder. PCA panels use frozen coordinates; rebuilding them does not refit DESeq2. Figure 9 may regenerate its source-data table from the included frozen candidate overlay.
+PDF and PNG outputs are written within each figure folder. The plotting requirements are separate from the R, scheduler and external-tool requirements of the archived analyses. PCA panels use frozen coordinates. Figure 9 uses `TRINITY_DN27036_c0_g1` and can regenerate its source table from the supplied candidate overlay. Figure scripts plot existing estimates; they do not rerun differential expression, enrichment, secretion prediction or MEROPS searches.
 
-## Frozen result conventions
+## Restore archived inputs
 
-Differential-expression criterion: adjusted P < 0.01 and absolute unshrunk log2 fold change >= 1. Insect contrast is pupa versus larva; positive coefficients indicate pupa-up expression. Plant contrast is GP versus UP; positive coefficients indicate GP-up expression.
+From the repository root, choose a new destination for each restoration:
 
-Final insect results: 4,406 DEGs = 1,909 larva-up + 2,497 pupa-up. Final plant results: 3,530 DEGs = 2,147 GP-up + 1,383 UP-up, after exclusion of the frozen 16,404-gene mask. The plant result universe contains 24,734 genes, including 172 with unavailable adjusted P values. Older plant results must not be substituted.
+```bash
+python Analysis/plant/inputs/restore_inputs.py --destination /path/to/new/EGW_plant_projects
+python Analysis/insect/inputs/restore_inputs.py --destination /path/to/new/EGW_insect_projects
+python Analysis/annotations_merops/inputs/restore_inputs.py --destination /path/to/new/EGW_annotation_projects
+```
 
-## Data and code availability status
+The helpers restore original project-relative paths and verify file identities. They do not execute analyses and refuse existing destinations. The added gzip layer must be removed before binary RDS objects are read in R; these helpers perform that restoration.
 
-GEO/SRA deposition is in preparation. No accession has been assigned in this draft. Raw FASTQ files, large sequence files and processed count matrices are not included here. Repository release, commit and public-access details must be finalized before citing code availability in the manuscript.
+## Analysis scope and execution limits
 
-This package supports figure reproduction from supplied source data. It is not a complete raw-read-to-results pipeline. The final refined-mask plant scripts are included under `Analysis/plant/`; 14 frozen input/checkpoint files and retained final execution logs/session records are included, with checksum verification. Earlier audit dependencies and path portability remain documented limitations. Insect source scripts are included; selected count/QC/prediction inputs and a QC session record are included; annotation/MEROPS source resources are now included under `Analysis/annotations_merops`; some primary execution records and dependencies remain incomplete. Earlier plant scripts are explicitly identified by stage; they do not supersede the final workflow.
+The package supports reproduction of the main figures from supplied inputs and preserves selected analysis sources, inputs, results and execution evidence. It is not a turnkey raw-read-to-results workflow. Archived scripts retain original Windows/WSL/TRUBA path assumptions and require configuration, external software and some inputs not included here. A retained container-build job depends on a local sandbox that is not supplied. Third-party model weights and the MEROPS database are not distributed.
+
+Plant scripts 38–40 document the final refined-mask branch; script 40 adapts scripts 27/28 in memory. Running 27/28 directly targets an earlier branch. Do not run the full numbered script collection as an automatic pipeline. Earlier analyses and historical MEROPS tables do not supersede final manuscript results. The MEROPS README explains the final-status overlay: 19 of 20 historical plant priority candidates remain GP-up; `TRINITY_DN12519_c0_g1` is Non-DE in the final fit.
+
+Original source scripts and data were retained unchanged during documentation updates. Packaging checks did not rerun statistical models, alignments, enrichment tests or prediction/search tools. The retained R-session files document specific historical sessions rather than a complete environment lockfile.
+
+## Final result conventions
+
+Differential expression requires adjusted P < 0.01 and absolute unshrunk log2 fold change >= 1. Insect coefficients compare pupa versus larva; positive values indicate pupa-up expression. Plant coefficients compare GP versus UP; positive values indicate GP-up expression.
+
+- Insect: 4,406 DEGs, comprising 1,909 larva-up and 2,497 pupa-up genes; 13,919 retained genes, including four unavailable adjusted P values.
+- Plant: 3,530 DEGs, comprising 2,147 GP-up and 1,383 UP-up genes after exclusion of the frozen 16,404-gene mask; 24,734 retained genes, including 172 unavailable adjusted P values.
 
 ## Attribution and licensing
 
-The Figure 1 photograph is reproduced from Lin, Tung and Yang (2021), *Forests* 12, 948, Fig. 1B, under CC BY 4.0; see `Main_Figures/Figure_1/PHOTO_ATTRIBUTION.txt`. https://doi.org/10.3390/f12070948
+The Figure 1 photograph is reproduced from Lin, Tung and Yang (2021), *Forests* **12**, 948, Fig. 1B, under CC BY 4.0. See `Main_Figures/Figure_1/PHOTO_ATTRIBUTION.txt` and https://doi.org/10.3390/f12070948.
 
-A software license for the author's code has not yet been selected. The photograph retains its own license. Third-party software retains its respective licenses.
+A license for the author's original code has not yet been selected. This documentation does not grant a new license to third-party software, databases, annotations or the photograph; their applicable terms and attribution remain in force.

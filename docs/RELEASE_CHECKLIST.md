@@ -1,11 +1,23 @@
-# Before the manuscript release
+# Manuscript release checklist
 
-- Plant final source scripts 38–40 and dependencies 27/28 are archived. Retained final execution logs and session information are included. Fourteen frozen input/checkpoint files are included and checked against recorded identities. Reconcile path portability and additional inputs needed by earlier audits.
-- Insect source scripts are archived. Five count/QC/prediction/session files are included and checked. Annotation/MEROPS sources and final plant priority overlay are included. Reconcile remaining runtime dependencies and primary execution records. Do not substitute older plant scripts expecting 28,189 genes.
-- Add or link final annotation files and mask membership; record their identifiers and checksums.
-- Add GEO/SRA accession links after assignment.
-- Choose a license for original code and preserve third-party attribution.
-- Review repository contents and make the intended manuscript materials publicly accessible.
-- Create the manuscript release and record its tag and commit in Code availability.
+## Completed packaging and deposition
 
-This checklist records packaging work; no scientific analysis rerun is authorized or required by this draft.
+- Ten main figures have packaged plotting scripts and source inputs; the retained verification record describes the figure-rebuild checks.
+- Final plant source scripts, dependencies, 14 inputs/checkpoints and execution logs are archived.
+- Insect source scripts and five selected count/QC/prediction/session inputs are archived.
+- Annotation/MEROPS sources and the final plant priority overlay are archived with historical-version distinctions.
+- GEO accession GSE351178 and 12 approved samples were assigned. SRA loading remains pending as of 17 October 2026.
+- Repository documentation was consolidated and GEO links added on 17 October 2026.
+
+## Before publishing a manuscript release
+
+- Choose a license for original code; preserve third-party terms and photo attribution.
+- Confirm the intended repository visibility and reviewer access arrangements.
+- Upload the documentation update and verify the repository checksum manifest.
+- Create the manuscript release and record its tag and commit in Code Availability.
+- Check the GEO record for completed SRA links and update the status text when confirmed.
+- Advance GEO public release if a manuscript or preprint citing the accession becomes public before 16 October 2027.
+
+## Documented execution limits
+
+Historical analysis paths, some runtime dependencies and earlier-audit inputs remain outside the portable figure workflow. These limits must remain visible; packaging is not evidence of a complete raw-read-to-results rerun. No scientific analyses were rerun for this update. Remaining historical dependencies need not be executed merely to prepare a release.

@@ -18,7 +18,7 @@ Final result controls: 118,082 original genes; 16,404 masked; 101,678 genes befo
 
 ## Required input data
 
-These scripts refer to the author's original adjacent projects `qe_plant_denovo` and `qe_cross_species_discovery`. Those project inputs are not included in this script-only addition. In particular, script 38 requires:
+These scripts refer to the author's original adjacent projects `qe_plant_denovo` and `qe_cross_species_discovery`. Fourteen selected input/checkpoint files from these projects are included under `inputs/`. Restore them with the supplied helper before configuring script paths. In particular, script 38 requires:
 
 - `qe_plant_denovo/07_deseq2/plant_gene_txi.rds` (counts, abundance and length matrices).
 - `qe_plant_denovo/01_input/expression/plant_deseq2_samples.tsv`.
@@ -26,7 +26,7 @@ These scripts refer to the author's original adjacent projects `qe_plant_denovo`
 - `qe_cross_species_discovery/04_cross_species_integration/results/plant_coding_denominator_additional_sequence_review_candidates.tsv`.
 - `qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_DESeq2_GP_vs_UP_host_focused_expanded_mask_all.tsv`.
 
-Script 40 additionally requires the final result and fitted DESeq2 object produced by script 38, the transcriptome-wide refined-mask table, the original eggNOG annotation donor, the frozen expanded-mask defense inventory, and GO/KEGG gene mappings and pathway-name lookup used by script 28. All must be reconciled with deposited data or supplied as supporting inputs before claiming a complete reproducible analysis package. The 16,404-row GEO mask-membership file is not a drop-in replacement for the 118,082-row transcriptome-wide mask table expected by these scripts.
+Script 40 additionally requires the final result and fitted DESeq2 object produced by script 38, the transcriptome-wide refined-mask table, the original eggNOG annotation donor, the frozen expanded-mask defense inventory, and GO/KEGG gene mappings and pathway-name lookup used by script 28. These final-branch inputs are supplied in the 14-file bundle; additional historical-audit dependencies remain outside that bundle. The 16,404-row GEO mask-membership file is not a drop-in replacement for the 118,082-row transcriptome-wide mask table expected by these scripts.
 
 ## Paths, environments and verification limits
 
@@ -38,7 +38,7 @@ Static inspection confirmed the final masking order, model, count filter, contra
 
 ## Retained execution evidence
 
-The seven audit text files in the supplied 12-file log bundle end in PASS and report zero errors. The DESeq2 log reports the frozen mask and result counts above. The downstream log reports 77 GP-up and 33 UP-up statistically significant GO categories, with 66 and 28 current-resolved categories for manuscript interpretation; KEGG counts are 6 GP-up and 3 UP-up. These are distinct statistical and interpretation sets. Source tables have not been independently rechecked in this log-packaging step. The input-identity files preserve historical MD5 records; matching their listed source files remains part of input reconciliation. No analyses were rerun.
+The seven audit text files in the supplied 12-file log bundle end in PASS and report zero errors. The DESeq2 log reports the frozen mask and result counts above. The downstream log reports 77 GP-up and 33 UP-up statistically significant GO categories, with 66 and 28 current-resolved categories for manuscript interpretation; KEGG counts are 6 GP-up and 3 UP-up. These are distinct statistical and interpretation sets. Subsequent input checks are recorded in `inputs/verification.json`. The input-identity files preserve historical MD5 records, which were matched where source files were supplied. No analyses were rerun.
 
 ## Supplied frozen inputs
 
