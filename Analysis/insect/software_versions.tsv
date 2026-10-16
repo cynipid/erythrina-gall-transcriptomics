@@ -1,0 +1,5 @@
+software	version	evidence_scope
+R	4.6.1	retained blind=TRUE QC session; Windows 11 x64
+DESeq2	1.52.0	retained blind=TRUE QC session; not an alignment-tool version record
+ggplot2	4.0.3	retained blind=TRUE QC session; not an alignment-tool version record
+SummarizedExperiment	1.42.0	retained blind=TRUE QC session; not an alignment-tool version record

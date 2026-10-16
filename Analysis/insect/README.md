@@ -34,7 +34,7 @@ Original filenames and metadata identifiers remain unchanged. The sensitivity sc
 
 ## Inputs, paths and pending consolidation
 
-The primary DESeq2 script requires `qe_genome_guided/06_counts/gene_counts_matrix.tsv` and `sample_metadata.tsv`. The sensitivity script additionally requires `08_results_primary/insect_gene_vsd.rds`. The prediction classifier requires `11_signalp_tmhmm/results/signalp6_deeptmhmm_genomewide_13455.tsv`. Annotation and enrichment scripts require their named annotation/mapping inputs. These input files and historical environment records have not yet been added to this insect addition.
+The primary DESeq2 script requires `qe_genome_guided/06_counts/gene_counts_matrix.tsv` and `sample_metadata.tsv`. The sensitivity script additionally requires `08_results_primary/insect_gene_vsd.rds`. The prediction classifier requires `11_signalp_tmhmm/results/signalp6_deeptmhmm_genomewide_13455.tsv`. Annotation and enrichment scripts require their named annotation/mapping inputs. These four named inputs and a retained QC R-session record are now provided under `inputs/`; see its README and verification report. Additional annotation/enrichment inputs and primary-analysis execution records remain to be consolidated.
 
 Slurm jobs retain the original `/arf/scratch/sdinc/qe_rnaseq_truba` paths and scheduler settings. Several R scripts use the author's Windows-to-WSL project path. The container build job refers to a local sandbox not supplied here. These are original execution records, not portable jobs ready to submit from a repository checkout. No versions have been inferred from filenames or container names.
 
@@ -43,3 +43,7 @@ Current manuscript figure reproduction is provided separately under `Main_Figure
 ## Packaging verification
 
 The one Python file passed syntax parsing. All five Slurm files passed `bash -n` syntax checks. R was unavailable for syntax parsing. Source files were copied unchanged and SHA-256 values recorded. No DESeq2, enrichment, alignment, featureCounts, SignalP, DeepTMHMM or MEROPS analysis was run.
+
+## Supplied input checks
+
+All six count columns match the prepared GEO source exactly, metadata agree, and the 13,919-gene low-count-filtered universe matches the main Figure 3 source. The objective prediction table matches the classifier input SHA-256. `software_versions.tsv` explicitly limits the recovered R versions to the retained QC session.

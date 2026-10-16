@@ -1,0 +1,20 @@
+{
+  "count_rows": 14966,
+  "count_columns": [
+    "L1",
+    "L3",
+    "L4",
+    "P3",
+    "P4",
+    "P5"
+  ],
+  "nonnegative_integer_counts": true,
+  "all_89796_counts_match_geo_featureCounts": true,
+  "sum_ge_10_retained_genes": 13919,
+  "retained_ids_match_figure3_source": true,
+  "metadata_matches_columns_and_stage": true,
+  "prediction_records": 13455,
+  "prediction_sha256_matches_classifier": true,
+  "RDS_limit": "VST RDS preserved and checksummed but not loaded in R; no historical hash supplied for this RDS.",
+  "scope": "Read-only identity/table checks; no scientific analyses rerun."
+}
