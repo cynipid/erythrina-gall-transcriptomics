@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+.DS_Store
+Thumbs.db
+*.fastq
+*.fastq.gz
+*.fq.gz
+*.bam
+*.bai
+*.rds
+*.RData
+Main_Figures/**/*.pdf
+Main_Figures/**/Figure_*revised*.png
+Main_Figures/**/Figure_*corrected*.png
