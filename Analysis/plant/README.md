@@ -39,3 +39,7 @@ Static inspection confirmed the final masking order, model, count filter, contra
 ## Retained execution evidence
 
 The seven audit text files in the supplied 12-file log bundle end in PASS and report zero errors. The DESeq2 log reports the frozen mask and result counts above. The downstream log reports 77 GP-up and 33 UP-up statistically significant GO categories, with 66 and 28 current-resolved categories for manuscript interpretation; KEGG counts are 6 GP-up and 3 UP-up. These are distinct statistical and interpretation sets. Source tables have not been independently rechecked in this log-packaging step. The input-identity files preserve historical MD5 records; matching their listed source files remains part of input reconciliation. No analyses were rerun.
+
+## Supplied frozen inputs
+
+The 14 final-branch input/checkpoint files are now included under `inputs/`, compressed individually. See `inputs/README.md` for exact restoration, checksums and remaining path and historical-audit dependencies. Recorded MD5 checks matched; final result/mask membership and annotation preservation were checked without rerunning analyses.

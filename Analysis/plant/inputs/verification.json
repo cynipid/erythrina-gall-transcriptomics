@@ -1,0 +1,84 @@
+{
+  "review_type": "file identity and existing table consistency; no statistical analyses rerun",
+  "recorded_md5_checks": [
+    {
+      "record": "38_host_focused_refined_mask_DESeq2_input_identity.tsv",
+      "file": "qe_plant_denovo/07_deseq2/plant_gene_txi.rds",
+      "md5": "f90c81243ebe6fc86cb48897f3ce6d0b",
+      "match": true
+    },
+    {
+      "record": "38_host_focused_refined_mask_DESeq2_input_identity.tsv",
+      "file": "qe_plant_denovo/01_input/expression/plant_deseq2_samples.tsv",
+      "md5": "14d5806aaad96c52298420182815e5eb",
+      "match": true
+    },
+    {
+      "record": "38_host_focused_refined_mask_DESeq2_input_identity.tsv",
+      "file": "qe_cross_species_discovery/04_cross_species_integration/results/plant_expanded_nucleotide_supported_Qerythrinae_sequence_review_mask.tsv",
+      "md5": "791ad1af50f4aa81ff1b71b117d4fc22",
+      "match": true
+    },
+    {
+      "record": "38_host_focused_refined_mask_DESeq2_input_identity.tsv",
+      "file": "qe_cross_species_discovery/04_cross_species_integration/results/plant_coding_denominator_additional_sequence_review_candidates.tsv",
+      "md5": "a46a23784e458149b4904ebc6c39c78b",
+      "match": true
+    },
+    {
+      "record": "38_host_focused_refined_mask_DESeq2_input_identity.tsv",
+      "file": "qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_DESeq2_GP_vs_UP_host_focused_expanded_mask_all.tsv",
+      "md5": "e46f0688e3b9442c76e5542c1d3c993b",
+      "match": true
+    },
+    {
+      "record": "40_refined_mask_host_focused_enrichment_input_identity.tsv",
+      "file": "qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_eggnog_joined.tsv",
+      "md5": "af748f8944c83b39949a514a3d9f0fb8",
+      "match": true
+    },
+    {
+      "record": "40_refined_mask_host_focused_enrichment_input_identity.tsv",
+      "file": "qe_plant_denovo/04_enrichment/primary_FDR001_LFC1/go/plant_tested_gene_to_GO.tsv",
+      "md5": "4ecdfc6e5c74af8e98d09d28a9b3a442",
+      "match": true
+    },
+    {
+      "record": "40_refined_mask_host_focused_enrichment_input_identity.tsv",
+      "file": "qe_plant_denovo/04_enrichment/primary_FDR001_LFC1/kegg/plant_tested_gene_to_KEGG_pathway_canonical.tsv",
+      "md5": "7bd9d1630698d49f3988b142c33c189d",
+      "match": true
+    },
+    {
+      "record": "40_refined_mask_host_focused_enrichment_input_identity.tsv",
+      "file": "qe_plant_denovo/04_enrichment/kegg/KEGG_reference_pathway_lookup.tsv",
+      "md5": "2e1b96a5d5cea6d5ed5d0a6e2fc4f2e7",
+      "match": true
+    },
+    {
+      "record": "40_refined_mask_host_focused_plot_input_identity.tsv",
+      "file": "qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_dds_host_focused_refined_mask.rds",
+      "md5": "1d293192a8816f5a94eebe0d4a03bbd8",
+      "match": true
+    },
+    {
+      "record": "40_refined_mask_host_focused_plot_input_identity.tsv",
+      "file": "qe_cross_species_discovery/05_host_focused_DESeq2_sensitivity/results/plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_all.tsv",
+      "md5": "308d1098912382103849a6d7e78286d1",
+      "match": true
+    }
+  ],
+  "result_rows": 24734,
+  "statuses": {
+    "non_DE": 21032,
+    "GP_up": 2147,
+    "UP_up": 1383,
+    "NA_padj_not_testable": 172
+  },
+  "transcriptome_wide_mask_rows": 118082,
+  "excluded_genes": 16404,
+  "mask_matches_geo_membership": true,
+  "masked_genes_in_final_results": 0,
+  "annotation_join_preserves_all_result_fields": true,
+  "RDS_limit": "Binary RDS files verified against historical MD5 only; objects not loaded in R during this review."
+}
