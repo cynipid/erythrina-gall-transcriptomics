@@ -2,7 +2,7 @@
 
 Repository: https://github.com/cynipid/erythrina-gall-transcriptomics
 
-**Preparation draft: figure reproduction package and retained plant analysis scripts. Fourteen frozen plant inputs/checkpoints, plant scripts and execution logs are included. Path portability, earlier audit dependencies and insect workflow consolidation remain incomplete.**
+**Preparation draft: figure reproduction package and retained plant analysis scripts. Fourteen frozen plant inputs/checkpoints, plant scripts and execution logs are included. Insect source scripts are also included. Path portability, earlier audit dependencies and insect inputs/environment records remain incomplete.**
 
 Associated study: *Parallel transcriptomics reveals insect developmental shifts and gall-associated host transcriptional differences in Quadrastichus erythrinae and Erythrina variegata*.
 
@@ -15,6 +15,7 @@ Samples were collected from one *Erythrina variegata* tree at Academia Sinica, T
 ## Contents
 
 - `Main_Figures/Figure_1` through `Figure_10`: plotting scripts, direct source tables, metadata and required inputs.
+- `Analysis/insect/`: original Slurm, DESeq2/enrichment/candidate and prediction-classification scripts, plus blind=TRUE QC sensitivity code.
 - `Analysis/plant/`: 40 retained source scripts, a stage map, required-input documentation and checksums. Scripts 38–40 define the final refined-mask branch; scripts 27/28 are dependencies of script 40.
 - `rebuild_all.py`: rebuilds the ten main figures using the adjacent files.
 - `requirements.txt`: Python plotting dependencies, with versions retained from the figure package where recorded. Pillow is additionally required for the approved Figure 1; its historical version is not specified.
@@ -44,7 +45,7 @@ Final insect results: 4,406 DEGs = 1,909 larva-up + 2,497 pupa-up. Final plant r
 
 GEO/SRA deposition is in preparation. No accession has been assigned in this draft. Raw FASTQ files, large sequence files and processed count matrices are not included here. Repository release, commit and public-access details must be finalized before citing code availability in the manuscript.
 
-This package supports figure reproduction from supplied source data. It is not a complete raw-read-to-results pipeline. The final refined-mask plant scripts are included under `Analysis/plant/`; 14 frozen input/checkpoint files and retained final execution logs/session records are included, with checksum verification. Earlier audit dependencies and path portability remain documented limitations. Insect analysis scripts, annotations and mask membership require consolidation or links to deposited files. Earlier plant scripts are explicitly identified by stage; they do not supersede the final workflow.
+This package supports figure reproduction from supplied source data. It is not a complete raw-read-to-results pipeline. The final refined-mask plant scripts are included under `Analysis/plant/`; 14 frozen input/checkpoint files and retained final execution logs/session records are included, with checksum verification. Earlier audit dependencies and path portability remain documented limitations. Insect source scripts are included; their inputs/environment records and other annotation/MEROPS resources still require consolidation or links to deposited files. Earlier plant scripts are explicitly identified by stage; they do not supersede the final workflow.
 
 ## Attribution and licensing
 
