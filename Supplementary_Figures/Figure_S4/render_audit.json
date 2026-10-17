@@ -1,0 +1,19 @@
+{
+  "source": "Supplementary_Figure_S4_source_data.tsv",
+  "source_sha256": "3df95900c13bcda91225bf45503b21de1f1b5bff82861119991f77ba5e7ec758",
+  "rows": 13919,
+  "status_counts": {
+    "Pupa-up": 2497,
+    "Larva-up": 1909,
+    "Non-DE": 9509,
+    "Not tested": 4
+  },
+  "x_coordinate": "log10(baseMean + 1)",
+  "y_coordinate": "unshrunk log2FoldChange",
+  "positive_direction": "Pupa-up",
+  "negative_direction": "Larva-up",
+  "not_tested_coordinates": "Actual finite log2FoldChange; no artificial zeros",
+  "classification": "Read unchanged from archived status column",
+  "statistical_analysis_rerun": false,
+  "output_png_dpi": 300
+}

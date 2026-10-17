@@ -1,0 +1,42 @@
+Final main figure package
+17 October 2026
+
+Final numbering: Figures 1-6.
+Figure_Index.tsv lists every final PDF, high-resolution PNG, script and source table.
+Figure_Numbering_Map.tsv maps the previous numbering to the final numbering.
+
+For manuscript figures, use the individual PDF (vector where available) or PNG in
+each Figure folder. Every folder has one final PDF/PNG pair and a current caption.txt.
+Main_Figure_Captions.docx preserves species italics, italic statistical P and log subscripts;
+the matching .txt file provides plain editable text. The combined PDF
+Main_Figures_Preview.pdf presents all 6 figures with their captions.
+
+The final figure numbers match the approved six-main-figure manuscript. Captions
+are taken from the approved manuscript or its approved supplementary caption records.
+The study's frozen estimates, DEG classes, enrichment rows and candidate identifiers
+are unchanged. Only final numbering and necessary display consistency were updated.
+
+To rebuild the individual figures in a Python 3 environment:
+    python -m pip install -r requirements.txt
+    python rebuild_all.py --outdir rebuilt_figures
+To rebuild the combined preview from the packaged figure PDFs:
+    python build_preview.py
+
+All 6 plot.py scripts were executed using local frozen inputs and checked against
+the supplied production PNGs. Rebuilt PNGs match the final production pixels.
+PDF creation metadata can differ between runs. No differential-expression model,
+enrichment test, alignment or secretion prediction was rerun for these packages.
+SHA256SUMS.txt identifies the distributed files; regenerated files can acquire new
+hashes even when their displayed content agrees.
+
+Original code and associated documentation use the MIT License in LICENSE.
+This does not relicense research data, reference databases or third-party resources.
+The Figure 1 photograph retains its separate CC BY 4.0 attribution.
+
+Figure 1 uses the accepted 15 October revision. Figure 5 has lowercase a/b/c panel
+letters matching its caption; the remaining artwork pixels are unchanged.
+
+Repository delivery note: the complete publication masters are supplied in the final
+figure ZIP packages. This repository includes every script, caption and frozen input.
+Main Figure 1 PDF/PNG and the two combined preview PDFs can be generated locally.
+See docs/MASTER_FILE_UPLOAD_LIST.tsv at repository root for these four file paths.

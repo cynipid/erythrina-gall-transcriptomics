@@ -1,10 +1,8 @@
-Figure 6: plant PCA using the final refined mask. All six frozen coordinates are retained exactly.
-PC1 = 73.05%; PC2 = 13.90%, preserved at their reported precision. PCA uses the top 500 variable VST features, blind = TRUE.
-Each point is one petiole; n = 3 per condition, all from one host tree and one sampling occasion.
-The wider GP dispersion is a description of the plotted samples, not a demonstrated biological cause.
+Figure 6
 
+Files: Figure_6.pdf (vector PDF), Figure_6.png (full-resolution PNG), plot.py, caption.txt and adjacent frozen source input(s).
 Rebuild: python plot.py
-Dependencies: Python 3, matplotlib, numpy.
-The script resolves all inputs relative to itself and may be run from any working directory.
-PDF width: 180 mm; PNG resolution: 300 dpi. Smallest text: 10 pt.
-All edits are display-only; no differential-expression analysis or PCA was rerun.
+Test without overwriting archived outputs: python plot.py --outdir /path/to/test_output
+The script resolves frozen inputs relative to itself and runs from any working directory. No differential-expression fitting, PCA, enrichment, secretion prediction, MEROPS search, or other statistical analysis is performed.
+
+Dependencies are documented in the script header and the package requirements.txt.

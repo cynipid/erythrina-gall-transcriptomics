@@ -1,0 +1,378 @@
+{
+  "figures": [
+    {
+      "new_figure": 1,
+      "original_main_figure": 1,
+      "original_folder": "Figure_1_revised_20261015",
+      "script_edits": [
+        "Local figure/source/output filenames updated; plot math and data untouched.",
+        "Added --outdir while retaining photo input beside script."
+      ],
+      "inputs": [
+        {
+          "source": "Figure_1_revised_20261015/Figure_1_photo.png",
+          "destination": "Figure_1/Figure_1_photo.png",
+          "source_sha256": "786aa5713296e9d6805cbc1939bcf907682032b375f056fd803d130f336143e6",
+          "copied_sha256": "786aa5713296e9d6805cbc1939bcf907682032b375f056fd803d130f336143e6",
+          "byte_identical": true,
+          "rows_excluding_header": null
+        },
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_1/Figure_1_source_data.tsv",
+          "destination": "Figure_1/Figure_1_source_data.tsv",
+          "source_sha256": "7816e0e323f58f6c4dfa05367a1d53285b30e59c2ea64f693f650e7442d06484",
+          "copied_sha256": "7816e0e323f58f6c4dfa05367a1d53285b30e59c2ea64f693f650e7442d06484",
+          "byte_identical": true,
+          "rows_excluding_header": 4,
+          "relevance": "Same approved 3 pools x 10 individuals and 3 whole-petiole replicates, with matching group colors."
+        }
+      ],
+      "original_pdf": "Figure_1_revised_20261015/Figure_1_corrected.pdf",
+      "original_png": "Figure_1_revised_20261015/Figure_1_revised_20261015.png",
+      "original_pdf_sha256": "e4bb872e5fc2147bf4253e85595e49450bdcc4ab3556e53686205a3e28283208",
+      "original_png_sha256": "3cd617fe14158a31ce24386980f22f0ee5dd6221bdcd5f126b799e2162f343d9",
+      "png_rendering": {
+        "original_dimensions": [
+          4252,
+          4115
+        ],
+        "render_dimensions": [
+          4252,
+          4115
+        ],
+        "pixel_identical": true,
+        "changed_pixels": 0,
+        "difference_bounding_box": null,
+        "dpi": [
+          599.9988,
+          599.9988
+        ]
+      },
+      "pdf_rendering": {
+        "same_page_geometry": true,
+        "changed_pixels_at_72dpi": 0,
+        "text_identical": true
+      },
+      "production_artwork": "Exact original PDF and PNG bytes retained; renamed plotting script raster reproduces the supplied artwork exactly.",
+      "production_pdf_sha256": "e4bb872e5fc2147bf4253e85595e49450bdcc4ab3556e53686205a3e28283208",
+      "production_png_sha256": "3cd617fe14158a31ce24386980f22f0ee5dd6221bdcd5f126b799e2162f343d9",
+      "script_execution": "PASS; portable plot.py --outdir isolated test directory",
+      "inputs_still_byte_identical": true,
+      "visual_inspection": "Supplied full-resolution PNG inspected. Geometry, candidate labels, counts, axes and group colors match expected figure.",
+      "photo_identical_across_supplied_versions": true
+    },
+    {
+      "new_figure": 2,
+      "original_main_figure": 4,
+      "original_folder": "EGW_Figures_revised_20261014/Main_Figures/Figure_4",
+      "script_edits": [
+        "Local figure/source/output filenames updated; plot math and data untouched.",
+        "Added --outdir; original adjacent frozen source input retained."
+      ],
+      "inputs": [
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_4/Figure_4_source_data.tsv",
+          "destination": "Figure_2/Figure_2_source_data.tsv",
+          "source_sha256": "5cc7670059f6d4b2cc7022a1f0db10657c8c3fc2bcae8adb39d8c079c7fcb77c",
+          "copied_sha256": "5cc7670059f6d4b2cc7022a1f0db10657c8c3fc2bcae8adb39d8c079c7fcb77c",
+          "byte_identical": true,
+          "rows_excluding_header": 32
+        }
+      ],
+      "original_pdf": "EGW_Figures_revised_20261014/Main_Figures/Figure_4/Figure_4_insect_GO_KEGG_enrichment.pdf",
+      "original_png": "EGW_Figures_revised_20261014/Main_Figures/Figure_4/Figure_4_insect_GO_KEGG_enrichment.png",
+      "original_pdf_sha256": "01fae7a13f89ace3e82672b6735f8d68028d6989fbf62696cdee45e99de93f62",
+      "original_png_sha256": "d21f22d3e2c0dde1dd8dbb9d007141d6a528aeb17fe0edee2b3729e59a297ef7",
+      "png_rendering": {
+        "original_dimensions": [
+          2125,
+          2834
+        ],
+        "render_dimensions": [
+          2125,
+          2834
+        ],
+        "pixel_identical": true,
+        "changed_pixels": 0,
+        "difference_bounding_box": null,
+        "dpi": [
+          299.9994,
+          299.9994
+        ]
+      },
+      "pdf_rendering": {
+        "same_page_geometry": true,
+        "changed_pixels_at_72dpi": 0,
+        "text_identical": true
+      },
+      "production_artwork": "Exact original PDF and PNG bytes retained; renamed plotting script raster reproduces the supplied artwork exactly.",
+      "production_pdf_sha256": "01fae7a13f89ace3e82672b6735f8d68028d6989fbf62696cdee45e99de93f62",
+      "production_png_sha256": "d21f22d3e2c0dde1dd8dbb9d007141d6a528aeb17fe0edee2b3729e59a297ef7",
+      "script_execution": "PASS; portable plot.py --outdir isolated test directory",
+      "inputs_still_byte_identical": true,
+      "visual_inspection": "Supplied full-resolution PNG inspected. Geometry, candidate labels, counts, axes and group colors match expected figure."
+    },
+    {
+      "new_figure": 3,
+      "original_main_figure": 5,
+      "original_folder": "EGW_Figures_revised_20261014/Main_Figures/Figure_5",
+      "script_edits": [
+        "Local figure/source/output filenames updated; plot math and data untouched."
+      ],
+      "inputs": [
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_5/Figure_5_source_data.tsv",
+          "destination": "Figure_3/Figure_3_source_data.tsv",
+          "source_sha256": "b37043bf3aa0c72a77f74fe7040cf78153a2acb897de6d52111f67e518708e08",
+          "copied_sha256": "b37043bf3aa0c72a77f74fe7040cf78153a2acb897de6d52111f67e518708e08",
+          "byte_identical": true,
+          "rows_excluding_header": 49
+        }
+      ],
+      "original_pdf": "EGW_Figures_revised_20261014/Main_Figures/Figure_5/Figure_5_insect_secretome_candidate_families.pdf",
+      "original_png": "EGW_Figures_revised_20261014/Main_Figures/Figure_5/Figure_5_insect_secretome_candidate_families.png",
+      "original_pdf_sha256": "e4023ddb65f5b198c4348f5721740843c82310f1ad7ae0617eaf527689eb2799",
+      "original_png_sha256": "e3c62ec4df67f6c1a2ddca8c37e4a4dd9629b1e3e9d6fc1a282a36ce8daa3213",
+      "png_rendering": {
+        "original_dimensions": [
+          2125,
+          2811
+        ],
+        "render_dimensions": [
+          2125,
+          2811
+        ],
+        "pixel_identical": true,
+        "changed_pixels": 0,
+        "difference_bounding_box": null,
+        "dpi": [
+          299.9994,
+          299.9994
+        ]
+      },
+      "pdf_rendering": {
+        "same_page_geometry": true,
+        "changed_pixels_at_72dpi": 0,
+        "text_identical": true
+      },
+      "production_artwork": "Exact original PDF and PNG bytes retained; renamed plotting script raster reproduces the supplied artwork exactly.",
+      "production_pdf_sha256": "e4023ddb65f5b198c4348f5721740843c82310f1ad7ae0617eaf527689eb2799",
+      "production_png_sha256": "e3c62ec4df67f6c1a2ddca8c37e4a4dd9629b1e3e9d6fc1a282a36ce8daa3213",
+      "script_execution": "PASS; portable plot.py --outdir isolated test directory",
+      "inputs_still_byte_identical": true,
+      "visual_inspection": "Supplied full-resolution PNG inspected. Geometry, candidate labels, counts, axes and group colors match expected figure."
+    },
+    {
+      "new_figure": 4,
+      "original_main_figure": 8,
+      "original_folder": "EGW_Figures_revised_20261014/Main_Figures/Figure_8",
+      "script_edits": [
+        "Local figure/source/output filenames updated; plot math and data untouched.",
+        "Added --outdir; original adjacent frozen source input retained."
+      ],
+      "inputs": [
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_8/Figure_8_source_data.tsv",
+          "destination": "Figure_4/Figure_4_source_data.tsv",
+          "source_sha256": "ff9b3ba06d3594bfe64bd67dd00aa41c3ef9ddc4679393f7ade9f14ea1a62639",
+          "copied_sha256": "ff9b3ba06d3594bfe64bd67dd00aa41c3ef9ddc4679393f7ade9f14ea1a62639",
+          "byte_identical": true,
+          "rows_excluding_header": 23
+        }
+      ],
+      "original_pdf": "EGW_Figures_revised_20261014/Main_Figures/Figure_8/Figure_8_plant_enrichment_revised.pdf",
+      "original_png": "EGW_Figures_revised_20261014/Main_Figures/Figure_8/Figure_8_plant_enrichment_revised.png",
+      "original_pdf_sha256": "1b34c111ec92bb6870f78d4d17a1113e027e4c84a961d1a2d7bae986de03bbcb",
+      "original_png_sha256": "125b77c17b78dab4d19a5585cb97e5d6bac7dfd9335040c2807e1bc2c5d56602",
+      "png_rendering": {
+        "original_dimensions": [
+          2125,
+          2480
+        ],
+        "render_dimensions": [
+          2125,
+          2480
+        ],
+        "pixel_identical": true,
+        "changed_pixels": 0,
+        "difference_bounding_box": null,
+        "dpi": [
+          299.9994,
+          299.9994
+        ]
+      },
+      "pdf_rendering": {
+        "same_page_geometry": true,
+        "changed_pixels_at_72dpi": 0,
+        "text_identical": true
+      },
+      "production_artwork": "Exact original PDF and PNG bytes retained; renamed plotting script raster reproduces the supplied artwork exactly.",
+      "production_pdf_sha256": "1b34c111ec92bb6870f78d4d17a1113e027e4c84a961d1a2d7bae986de03bbcb",
+      "production_png_sha256": "125b77c17b78dab4d19a5585cb97e5d6bac7dfd9335040c2807e1bc2c5d56602",
+      "script_execution": "PASS; portable plot.py --outdir isolated test directory",
+      "inputs_still_byte_identical": true,
+      "visual_inspection": "Supplied full-resolution PNG inspected. Geometry, candidate labels, counts, axes and group colors match expected figure."
+    },
+    {
+      "new_figure": 5,
+      "original_main_figure": 9,
+      "original_folder": "EGW_Figures_revised_20261014/Main_Figures/Figure_9",
+      "script_edits": [
+        "Local figure/source/output filenames updated; plot math and data untouched.",
+        "Authorized cosmetic correction only: panel labels A/B/C -> a/b/c, same coordinates."
+      ],
+      "inputs": [
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_9/Figure_9_source_data.tsv",
+          "destination": "Figure_5/Figure_5_source_data.tsv",
+          "source_sha256": "17a42863b100a0670553c7b577e94a852f3c15be48a742f3090c0d6a8f205a47",
+          "copied_sha256": "17a42863b100a0670553c7b577e94a852f3c15be48a742f3090c0d6a8f205a47",
+          "byte_identical": true,
+          "rows_excluding_header": 26
+        },
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_9/plant_refined_mask_defense_candidate_gene_summary.tsv",
+          "destination": "Figure_5/plant_refined_mask_defense_candidate_gene_summary.tsv",
+          "source_sha256": "b1d99b378d9f69a0d1fbd9b20bb0d21f81e01e33aeb4f01b36fcebf831778d6a",
+          "copied_sha256": "b1d99b378d9f69a0d1fbd9b20bb0d21f81e01e33aeb4f01b36fcebf831778d6a",
+          "byte_identical": true,
+          "rows_excluding_header": 806
+        }
+      ],
+      "original_pdf": "EGW_Figures_revised_20261014/Main_Figures/Figure_9/Figure_9_plant_defense_candidates.pdf",
+      "original_png": "EGW_Figures_revised_20261014/Main_Figures/Figure_9/Figure_9_plant_defense_candidates.png",
+      "original_pdf_sha256": "5a741958b629ed7570c790575eaa2a0ceb82ff7b2386531e21825d41a16645cd",
+      "original_png_sha256": "33e5e19eda5bbe9efde822e9ce60a1862aa4c94bd0cc3d59827aecc2ed7565c5",
+      "png_rendering": {
+        "original_dimensions": [
+          3986,
+          2939
+        ],
+        "render_dimensions": [
+          3986,
+          2939
+        ],
+        "pixel_identical": false,
+        "changed_pixels": 2356,
+        "difference_bounding_box": [
+          388,
+          158,
+          2368,
+          1536
+        ],
+        "dpi": [
+          299.9994,
+          299.9994
+        ],
+        "difference_regions": [
+          [
+            407,
+            158,
+            452,
+            204
+          ],
+          [
+            2332,
+            158,
+            2368,
+            204
+          ],
+          [
+            388,
+            1491,
+            426,
+            1536
+          ]
+        ],
+        "only_three_panel_letter_regions_changed": true
+      },
+      "pdf_rendering": {
+        "same_page_geometry": true,
+        "changed_pixels_at_72dpi": 240,
+        "text_identical": false,
+        "text_identical_except_ABC_to_abc": true
+      },
+      "regenerated_source_summary": {
+        "rows": 26,
+        "same_parsed_values_all_columns": true,
+        "byte_identical": true,
+        "source_sha256": "17a42863b100a0670553c7b577e94a852f3c15be48a742f3090c0d6a8f205a47",
+        "generated_sha256": "17a42863b100a0670553c7b577e94a852f3c15be48a742f3090c0d6a8f205a47",
+        "corrected_candidate": "TRINITY_DN27036_c0_g1",
+        "obsolete_candidate_absent": true
+      },
+      "production_artwork": "Regenerated from the supplied script with only A/B/C panel labels changed to a/b/c and portable filenames/output directory. All numeric data, source-summary rows and drawing positions unchanged.",
+      "production_pdf_sha256": "63f5f399ec0e0bc11676396e5239710de2ad208b46404fa0c31a97314ea07ed8",
+      "production_png_sha256": "0ccbbe59c2b05e3071a47c1fa40b236a5e6934f010912f7b732645e9b97043f4",
+      "script_execution": "PASS; portable plot.py --outdir isolated test directory",
+      "inputs_still_byte_identical": true,
+      "visual_inspection": "Supplied full-resolution PNG inspected. Geometry, candidate labels, counts, axes and group colors match expected figure."
+    },
+    {
+      "new_figure": 6,
+      "original_main_figure": 10,
+      "original_folder": "EGW_Figures_revised_20261014/Main_Figures/Figure_10",
+      "script_edits": [
+        "Local figure/source/output filenames updated; plot math and data untouched."
+      ],
+      "inputs": [
+        {
+          "source": "EGW_Figures_revised_20261014/Main_Figures/Figure_10/Figure_10_source_data.tsv",
+          "destination": "Figure_6/Figure_6_source_data.tsv",
+          "source_sha256": "e954fc477389e8492109d3d3d66a79f074a94e8ea52fa73203db3a7c5e724ba3",
+          "copied_sha256": "e954fc477389e8492109d3d3d66a79f074a94e8ea52fa73203db3a7c5e724ba3",
+          "byte_identical": true,
+          "rows_excluding_header": 120
+        }
+      ],
+      "original_pdf": "EGW_Figures_revised_20261014/Main_Figures/Figure_10/Figure_10_cross_system_MEROPS.pdf",
+      "original_png": "EGW_Figures_revised_20261014/Main_Figures/Figure_10/Figure_10_cross_system_MEROPS.png",
+      "original_pdf_sha256": "c1f924879ff9eb5bdf980972d54fa53daeba5666e98f7601bf544d424817e64d",
+      "original_png_sha256": "db90c96ffae2cdac8ed0b85d26df7139e0f32478d1554480186b6b5e4cad4acc",
+      "png_rendering": {
+        "original_dimensions": [
+          2125,
+          2834
+        ],
+        "render_dimensions": [
+          2125,
+          2834
+        ],
+        "pixel_identical": true,
+        "changed_pixels": 0,
+        "difference_bounding_box": null,
+        "dpi": [
+          299.9994,
+          299.9994
+        ]
+      },
+      "pdf_rendering": {
+        "same_page_geometry": true,
+        "changed_pixels_at_72dpi": 0,
+        "text_identical": true
+      },
+      "production_artwork": "Exact original PDF and PNG bytes retained; renamed plotting script raster reproduces the supplied artwork exactly.",
+      "production_pdf_sha256": "c1f924879ff9eb5bdf980972d54fa53daeba5666e98f7601bf544d424817e64d",
+      "production_png_sha256": "db90c96ffae2cdac8ed0b85d26df7139e0f32478d1554480186b6b5e4cad4acc",
+      "script_execution": "PASS; portable plot.py --outdir isolated test directory",
+      "inputs_still_byte_identical": true,
+      "visual_inspection": "Supplied full-resolution PNG inspected. Geometry, candidate labels, counts, axes and group colors match expected figure."
+    }
+  ],
+  "scope": "Figure-package preparation only; manuscript and supplementary files untouched.",
+  "all_scripts_executed_successfully": true,
+  "all_frozen_inputs_byte_identical": true,
+  "no_statistics_rerun": true,
+  "main_figure_5_only_authorized_artwork_change": "Panel lettering A/B/C -> a/b/c; all other design/data preserved.",
+  "rendering_environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+    "matplotlib": "3.10.8",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3",
+    "Pillow": "12.3.0",
+    "PyMuPDF": "1.26.6",
+    "reportlab": "4.4.9"
+  },
+  "production_file_count": 42,
+  "captions_source": "Approved EGW_Manuscript_Six_Main_Figures.docx, six Caption-style paragraphs; extracted unchanged as plain text."
+}

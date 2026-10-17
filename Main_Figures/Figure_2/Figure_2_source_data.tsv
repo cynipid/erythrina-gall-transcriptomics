@@ -1,7 +1,33 @@
-sample_id	sample_label	group	PC1	PC2	label_dx_points	label_dy_points	leader_line
-L1	L1	larva	-49.2214859747539	9.8879380714414	12	-11	FALSE
-L3	L2	larva	-57.7275900622337	-22.5124699371576	-2	-15	FALSE
-L4	L3	larva	-55.886934805825	13.5887970781567	-1	14	FALSE
-P3	P1	pupa	54.2334559443783	-0.626315452062295	-23	-10	TRUE
-P4	P2	pupa	53.7838027232676	0.929686644193508	10	18	TRUE
-P5	P3	pupa	54.8187521751667	-1.26763640457172	19	-22	TRUE
+panel	direction	analysis	term	term_name	overlap	gene_ratio_percent	padj
+A	Larva-up	GO	GO:0008236	serine-type peptidase activity	143	13.8164251208	7.15930800734169e-45
+A	Larva-up	GO	GO:0002181	cytoplasmic translation	36	3.47826086957	8.73438512377818e-07
+A	Larva-up	GO	GO:0006520	amino acid metabolic process	64	6.18357487923	1.42052778657769e-06
+A	Larva-up	GO	GO:0016042	lipid catabolic process	51	4.92753623188	1.28745594181017e-05
+A	Larva-up	GO	GO:0005996	monosaccharide metabolic process	40	3.86473429952	8.01301656096422e-05
+A	Larva-up	GO	GO:0005775	vacuolar lumen	31	2.99516908213	6.08078106161065e-05
+A	Larva-up	GO	GO:0009617	response to bacterium	81	7.82608695652	6.32901428222349e-06
+A	Larva-up	GO	GO:0016614	Oxidoreductase activity on CH-OH donors	46	4.44444444444	5.69927909487505e-07
+B	Larva-up	KEGG	map04142	Lysosome biogenesis	64	8.23680823681	3.89760152187211e-09
+B	Larva-up	KEGG	map04974	Protein digestion and absorption	60	7.72200772201	1.21009253744024e-05
+B	Larva-up	KEGG	map04972	Pancreatic secretion	60	7.72200772201	1.21009253744024e-05
+B	Larva-up	KEGG	map00480	Glutathione metabolism	27	3.4749034749	0.000356164492420659
+B	Larva-up	KEGG	map00040	Pentose and glucuronate interconversions	24	3.0888030888	0.00193493490911258
+B	Larva-up	KEGG	map00983	Drug metabolism - other enzymes	39	5.01930501931	0.00233762942217646
+B	Larva-up	KEGG	map00980	Xenobiotic metabolism by cytochrome P450	21	2.7027027027	0.00233762942217646
+B	Larva-up	KEGG	map00511	Other glycan degradation	12	1.5444015444	0.0152150740753211
+C	Pupa-up	GO	GO:0098798	Mitochondrial protein complex	112	8.87480190174	6.73097371663507e-33
+C	Pupa-up	GO	GO:0006119	oxidative phosphorylation	61	4.83359746434	4.88726345222929e-26
+C	Pupa-up	GO	GO:0046034	ATP metabolic process	77	6.10142630745	7.86269530119588e-23
+C	Pupa-up	GO	GO:0022904	respiratory electron transport chain	52	4.1204437401	5.81882681611624e-18
+C	Pupa-up	GO	GO:0022839	Ion-gated channel activity	66	5.22979397781	1.3137276266841e-20
+C	Pupa-up	GO	GO:0030594	neurotransmitter receptor activity	40	3.16957210777	6.66050174957946e-19
+C	Pupa-up	GO	GO:0050804	Modulation of synaptic transmission	90	7.13153724247	2.93839744518173e-12
+C	Pupa-up	GO	GO:0006816	calcium ion transport	49	3.88272583201	6.90200082241999e-11
+D	Pupa-up	KEGG	map00190	Oxidative phosphorylation	63	8.88575458392	2.08685060944614e-26
+D	Pupa-up	KEGG	map00020	Citrate cycle (TCA cycle)	20	2.82087447109	1.01065194963619e-06
+D	Pupa-up	KEGG	map04020	Calcium signaling pathway	38	5.35966149506	1.25137936979423e-10
+D	Pupa-up	KEGG	map04080	Neuroactive ligand-receptor interaction	59	8.3215796897	3.34754411380022e-06
+D	Pupa-up	KEGG	map04724	Glutamatergic synapse	32	4.51339915374	4.18220250647566e-10
+D	Pupa-up	KEGG	map04727	GABAergic synapse	22	3.10296191819	1.4970215492412e-07
+D	Pupa-up	KEGG	map04726	Serotonergic synapse	29	4.09026798307	1.01065194963619e-06
+D	Pupa-up	KEGG	map04725	Cholinergic synapse	28	3.94922425952	9.58925761606511e-05

@@ -1,0 +1,31 @@
+SUPPLEMENTARY FIGURE REPRODUCIBILITY CHECK - FINAL
+
+Figures S1-S8 each contain one production PDF, one full-resolution PNG, a caption,
+a portable plot.py and a full-precision source TSV. All eight plotting scripts
+passed in isolated temporary copies. All eight generated PNGs were pixel-identical
+to their final production counterparts. All eight PDFs were opened successfully
+and contain their expected figure text. Artwork was visually checked.
+
+Six frozen result/PCA source TSVs (S1, S3, S4, S5, S7, S8) are byte-identical to
+the corresponding original Figure 2, 3, 3, 6, 7, 7 input TSVs. S6 retains its
+original 6-by-6 full-precision matrix byte-for-byte. S2's full-precision matrix was
+exported from the archived named 13,919-by-6 insect VST assay using rdata 1.1.0.
+Its sample order was checked against RDS column names, RDS colData, and the frozen
+PCA sample key; every rounded coefficient matches the accepted original heatmap.
+The exact RDS, sample key, extraction code and decoder audit are included in S2.
+No DESeq2 fitting, VST, PCA, enrichment, filtering or DEG reclassification was
+rerun. Only Pearson correlations of already frozen transformed values were
+calculated to recover the missing figure source matrix.
+
+S2 and S6 heatmaps were cosmetically refreshed for exact script/output agreement;
+all coefficients, sample labels and captions are unchanged. Original artwork
+hashes and final hashes are recorded in supplementary_copy_integrity.json.
+Other six production artworks are retained unchanged, apart from filenames.
+S4/S8 preserve the previously approved presentation-only MA refresh with separate
+Non-DE and Not tested classes, actual finite LFC positions for NA-adjusted-P
+genes, and the unchanged primary DEG criterion.
+
+Plotting runtime: Python 3.12.14, numpy 2.3.5, pandas 2.2.3, matplotlib 3.10.8.
+S2 optional RDS extraction used rdata 1.1.0 with numpy 2.5.4.
+S2/S6 PNGs are 400 dpi; all others are 300 dpi. PDFs retain vector content.
+No obsolete duplicate artworks, manuscript or supplementary tables were edited.

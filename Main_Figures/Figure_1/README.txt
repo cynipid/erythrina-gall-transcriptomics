@@ -1,1 +1,9 @@
-Figure 1 uses the approved 15 October 2026 design. Run Figure_1_plotting_script.py with the adjacent Figure_1_photo.png. Photo attribution and license are recorded in PHOTO_ATTRIBUTION.txt. Use caption.txt for the final shortened manuscript caption. Generated outputs are Figure_1_corrected.pdf and Figure_1_revised_20261015.png.
+Figure 1
+
+Files: Figure_1.pdf (vector PDF), Figure_1.png (full-resolution PNG), plot.py, caption.txt and adjacent frozen source input(s).
+Rebuild: python plot.py
+Test without overwriting archived outputs: python plot.py --outdir /path/to/test_output
+The script resolves frozen inputs relative to itself and runs from any working directory. No differential-expression fitting, PCA, enrichment, secretion prediction, MEROPS search, or other statistical analysis is performed.
+
+Dependencies are documented in the script header and the package requirements.txt.
+The photo input and source attribution are retained; the study-design table records the same four experimental groups, replication and colors as the approved diagram.

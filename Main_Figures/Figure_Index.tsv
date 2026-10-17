@@ -1,0 +1,7 @@
+figure	subject	pdf	png	plotting_script	caption	source_data
+Figure 1	Study system and experimental design	Figure_1/Figure_1.pdf	Figure_1/Figure_1.png	Figure_1/plot.py	Figure_1/caption.txt	Figure_1/Figure_1_source_data.tsv
+Figure 2	Insect GO and KEGG enrichment	Figure_2/Figure_2.pdf	Figure_2/Figure_2.png	Figure_2/plot.py	Figure_2/caption.txt	Figure_2/Figure_2_source_data.tsv
+Figure 3	Insect secretome and candidate families	Figure_3/Figure_3.pdf	Figure_3/Figure_3.png	Figure_3/plot.py	Figure_3/caption.txt	Figure_3/Figure_3_source_data.tsv
+Figure 4	Plant GO and KEGG enrichment	Figure_4/Figure_4.pdf	Figure_4/Figure_4.png	Figure_4/plot.py	Figure_4/caption.txt	Figure_4/Figure_4_source_data.tsv
+Figure 5	Plant-defense candidates	Figure_5/Figure_5.pdf	Figure_5/Figure_5.png	Figure_5/plot.py	Figure_5/caption.txt	Figure_5/Figure_5_source_data.tsv
+Figure 6	MEROPS inhibitors and peptidases	Figure_6/Figure_6.pdf	Figure_6/Figure_6.png	Figure_6/plot.py	Figure_6/caption.txt	Figure_6/Figure_6_source_data.tsv

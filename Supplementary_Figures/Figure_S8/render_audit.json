@@ -1,0 +1,19 @@
+{
+  "source": "Supplementary_Figure_S8_source_data.tsv",
+  "source_sha256": "ea0a844656dc4c5acf34776646e2f43ed4d7d3d843bc9617a408224a5e8c8974",
+  "rows": 24734,
+  "status_counts": {
+    "Non-DE": 21032,
+    "GP-up": 2147,
+    "UP-up": 1383,
+    "Not tested": 172
+  },
+  "x_coordinate": "log10(baseMean + 1)",
+  "y_coordinate": "unshrunk log2FoldChange",
+  "positive_direction": "GP-up",
+  "negative_direction": "UP-up",
+  "not_tested_coordinates": "Actual finite log2FoldChange; no artificial zeros",
+  "classification": "Read unchanged from archived status column",
+  "statistical_analysis_rerun": false,
+  "output_png_dpi": 300
+}

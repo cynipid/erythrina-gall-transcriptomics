@@ -1,0 +1,21 @@
+{
+  "source_sha256": "86fb203868878463d4dbe0d702a26d8a3b50e7cbb968649cab379d56a418da97",
+  "sample_order": [
+    "L1",
+    "L2",
+    "L3",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "matrix_shape": [
+    6,
+    6
+  ],
+  "minimum": 0.8081840217150089,
+  "maximum": 1.0,
+  "all_cells_displayed_to_two_decimal_places": true,
+  "numeric_matrix_modified": false,
+  "analysis_rerun": false,
+  "rendering_note": "Final production artwork uses this portable Matplotlib script; source matrix and sample labels unchanged."
+}

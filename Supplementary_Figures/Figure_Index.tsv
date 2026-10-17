@@ -1,0 +1,9 @@
+figure	subject	pdf	png	plotting_script	caption	source_data
+Supplementary Figure S1	Insect principal component analysis	Figure_S1/Supplementary_Figure_S1.pdf	Figure_S1/Supplementary_Figure_S1.png	Figure_S1/plot.py	Figure_S1/caption.txt	Figure_S1/Supplementary_Figure_S1_source_data.tsv
+Supplementary Figure S2	Insect sample correlations	Figure_S2/Supplementary_Figure_S2.pdf	Figure_S2/Supplementary_Figure_S2.png	Figure_S2/plot.py	Figure_S2/caption.txt	Figure_S2/Supplementary_Figure_S2_source_data.tsv
+Supplementary Figure S3	Insect volcano plot	Figure_S3/Supplementary_Figure_S3.pdf	Figure_S3/Supplementary_Figure_S3.png	Figure_S3/plot.py	Figure_S3/caption.txt	Figure_S3/Supplementary_Figure_S3_source_data.tsv
+Supplementary Figure S4	Insect MA plot	Figure_S4/Supplementary_Figure_S4.pdf	Figure_S4/Supplementary_Figure_S4.png	Figure_S4/plot.py	Figure_S4/caption.txt	Figure_S4/Supplementary_Figure_S4_source_data.tsv
+Supplementary Figure S5	Plant principal component analysis	Figure_S5/Supplementary_Figure_S5.pdf	Figure_S5/Supplementary_Figure_S5.png	Figure_S5/plot.py	Figure_S5/caption.txt	Figure_S5/Supplementary_Figure_S5_source_data.tsv
+Supplementary Figure S6	Plant sample correlations	Figure_S6/Supplementary_Figure_S6.pdf	Figure_S6/Supplementary_Figure_S6.png	Figure_S6/plot.py	Figure_S6/caption.txt	Figure_S6/Supplementary_Figure_S6_source_data.tsv
+Supplementary Figure S7	Plant volcano plot	Figure_S7/Supplementary_Figure_S7.pdf	Figure_S7/Supplementary_Figure_S7.png	Figure_S7/plot.py	Figure_S7/caption.txt	Figure_S7/Supplementary_Figure_S7_source_data.tsv
+Supplementary Figure S8	Plant MA plot	Figure_S8/Supplementary_Figure_S8.pdf	Figure_S8/Supplementary_Figure_S8.png	Figure_S8/plot.py	Figure_S8/caption.txt	Figure_S8/Supplementary_Figure_S8_source_data.tsv

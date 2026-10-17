@@ -1,132 +1,137 @@
 #!/usr/bin/env python3
-"""Rebuild this figure using only the files beside this script.
+"""Reproduce Figure 6 using only the adjacent frozen source TSV.
 
-Run: python plot.py
-Dependencies: Python 3, matplotlib, numpy.
-This is a rendering script: no DESeq2 fitting, PCA recomputation, shrinkage,
-enrichment, or significance-threshold changes are performed.
+Requires Python 3, pandas, numpy, and matplotlib. Run from any working directory:
+    python /path/to/plot.py
+No expression analysis, MEROPS search, or enrichment test is rerun.
 """
 from pathlib import Path
-import csv
-import json
-import math
-
+import argparse
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.lines import Line2D
+from matplotlib.patches import Patch
 import numpy as np
+import pandas as pd
 
 HERE = Path(__file__).resolve().parent
-META = json.loads((HERE / "metadata.json").read_text())
-with (HERE / META["source_data"]).open(newline="") as handle:
-    ROWS = list(csv.DictReader(handle, delimiter="\t"))
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument("--source", type=Path, default=HERE / "Figure_6_source_data.tsv")
+parser.add_argument("--outdir", type=Path, default=HERE)
+args = parser.parse_args()
+args.outdir.mkdir(parents=True, exist_ok=True)
+source = pd.read_csv(args.source, sep="\t")
+assert source.groupby("panel").size().to_dict() == {"A": 90, "B": 9, "C": 19, "D": 2}
+A, B, C, D = [source[source.panel.eq(p)].copy() for p in "ABCD"]
+assert A.category.nunique() == 18 and int(A["count"].sum()) == 149
+assert B.gene_id.nunique() == 9 and C.gene_id.nunique() == 19
+assert B.plotted_log2FoldChange.le(-1).all() and C.plotted_log2FoldChange.ge(1).all()
+assert np.allclose(B.original_log2FoldChange, B.plotted_log2FoldChange)
+assert np.allclose(B.legacy_display_log2FoldChange, -B.plotted_log2FoldChange)
+assert B.original_contrast.eq("pupa/larva").all() and B.plotted_contrast.eq("pupa/larva").all()
+assert C.original_contrast.eq("GP/UP").all() and C.plotted_contrast.eq("GP/UP").all()
+assert B.padj.lt(0.01).all() and C.padj.lt(0.01).all()
+assert np.isfinite(B.lfcSE).all() and np.isfinite(C.lfcSE).all()
 
+plt.rcParams.update({"font.family": "DejaVu Sans", "font.size": 8.5,
+    "axes.labelsize": 8.5, "xtick.labelsize": 8, "ytick.labelsize": 8,
+    "axes.spines.top": False, "axes.spines.right": False,
+    "axes.linewidth": 0.6, "pdf.fonttype": 42, "ps.fonttype": 42})
+colors = {"Pupa-up": "#CC79A7", "Larva-up": "#009E73", "Non-DE": "#A7A9AC",
+          "Excluded: low count": "#E69F00", "NA adjusted P": "#7E57C2", "GP-up": "#0072B2"}
+WIDTH, HEIGHT = 180, 240
+fig = plt.figure(figsize=(WIDTH/25.4, HEIGHT/25.4), facecolor="white")
+def axmm(x, y, w, h):
+    ax = fig.add_axes([x/WIDTH, y/HEIGHT, w/WIDTH, h/HEIGHT])
+    ax.grid(axis="x", color="#E5E7EB", linewidth=0.55)
+    ax.set_axisbelow(True)
+    return ax
+def title(letter, text, x, top):
+    fig.text(x/WIDTH, top/HEIGHT, letter, fontsize=11, fontweight="bold", va="top")
+    fig.text((x+7)/WIDTH, top/HEIGHT, text, fontsize=9, fontweight="bold", va="top")
 
-def number(value):
-    """Explicit float parsing preserves very small fixed-point P values."""
-    return float(value) if value not in ("", "NA", "NaN", "nan") else math.nan
+ax_a = axmm(15, 166, 55, 59)
+title("a", "Insect inhibitor-family homologs", 4, 237)
+fig.text(15/WIDTH, 229/HEIGHT, "149 candidates; 18 MEROPS families", fontsize=8)
+order = list(A.category.drop_duplicates())
+statuses = ["Pupa-up", "Larva-up", "Non-DE", "NA adjusted P", "Excluded: low count"]
+matrix = A.pivot(index="category", columns="series", values="count").reindex(index=order, columns=statuses)
+y = np.arange(len(order))
+left = np.zeros(len(order))
+for s in statuses:
+    values = matrix[s].to_numpy()
+    ax_a.barh(y, values, left=left, height=0.74, color=colors[s], edgecolor="white", linewidth=0.35)
+    left += values
+ax_a.set_yticks(y, order)
+ax_a.set_ylim(-0.6, len(order)-0.4)
+ax_a.set_xticks([0, 10, 20, 30, 40])
+ax_a.set_xlabel("Candidate genes")
+handles = [Patch(facecolor=colors[s], label=s) for s in statuses if matrix[s].sum()]
+fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(6/WIDTH, 155/HEIGHT), ncol=2,
+           frameon=False, fontsize=8, columnspacing=1.1, handlelength=1.1, handletextpad=0.4)
 
+ax_b = axmm(115, 166, 57, 59)
+title("b", "Larva-up inhibitor candidates", 78, 237)
+fig.text(83/WIDTH, 229/HEIGHT, "Nine candidates with Pfam-family support", fontsize=8)
+B = B.sort_values("legacy_display_log2FoldChange", ascending=True).reset_index(drop=True)
+y = np.arange(len(B))
+ax_b.hlines(y, B.plotted_log2FoldChange, 0, color="#B9B9B9", linewidth=0.6)
+ax_b.scatter(B.plotted_log2FoldChange, y, s=24, color=colors["Larva-up"], edgecolor="white", linewidth=0.4, zorder=3)
+ax_b.axvline(-1, color="#777777", linewidth=0.7, linestyle="--")
+ax_b.set_yticks(y, B.gene_id)
+ax_b.set_ylim(-0.6, len(B)-0.4)
+ax_b.set_xlim(-6.75, 0.3)
+ax_b.set_xticks([-6, -4, -2, 0])
+ax_b.set_xlabel("log₂ fold change (pupa/larva)")
+for i, row in B.iterrows():
+    family = row.series.split()[0]
+    label_left = row.plotted_log2FoldChange > -2.5
+    ax_b.annotate(f"{row.plotted_log2FoldChange:.2f}", (row.plotted_log2FoldChange,i),
+                  xytext=(-4 if label_left else 4, 0), textcoords="offset points",
+                  ha="right" if label_left else "left", va="center", fontsize=8)
+    ax_b.text(0.98, i, family, transform=ax_b.get_yaxis_transform(), va="center", ha="right", fontsize=8)
+fig.text(82/WIDTH, 149/HEIGHT, "I01: Kazal-type; I04: serpin", fontsize=8)
+fig.text(82/WIDTH, 144/HEIGHT, "I19: pacifastin", fontsize=8)
 
-def setup():
-    plt.rcParams.update({
-        "font.family": "DejaVu Sans", "font.size": 10,
-        "axes.labelsize": 11, "xtick.labelsize": 10, "ytick.labelsize": 10,
-        "legend.fontsize": 10, "axes.linewidth": 0.9,
-        "pdf.fonttype": 42, "ps.fonttype": 42,
-        "savefig.facecolor": "white", "svg.fonttype": "none",
-    })
-    fig, ax = plt.subplots(figsize=(180 / 25.4, META["height_mm"] / 25.4))
-    fig.subplots_adjust(left=0.13, right=0.975, bottom=0.13, top=0.86)
-    for edge in ["top", "right"]:
-        ax.spines[edge].set_visible(False)
-    ax.tick_params(length=4, width=0.9)
-    return fig, ax
+ax_c = axmm(56, 52, 105, 77)
+title("c", "GP-up plant peptidase candidates", 4, 140)
+fig.text(11/WIDTH, 133/HEIGHT, "Final refined-mask priority 1 + 2 classical-secretome candidates (n = 19)", fontsize=8)
+C = C.sort_values("plotted_log2FoldChange", ascending=True).reset_index(drop=True)
+y = np.arange(len(C))
+ax_c.hlines(y, 0, C.plotted_log2FoldChange, color="#B9B9B9", linewidth=0.6)
+ax_c.scatter(C.plotted_log2FoldChange, y, s=23, color=colors["GP-up"], edgecolor="white", linewidth=0.4, zorder=3)
+ax_c.axvline(1, color="#777777", linewidth=0.7, linestyle="--")
+ax_c.set_yticks(y, C.gene_id)
+ax_c.set_ylim(-0.55, len(C)-0.45)
+ax_c.set_xlim(0, 12)
+ax_c.set_xticks([0, 2, 4, 6, 8, 10, 12])
+ax_c.set_xlabel("log₂ fold change (GP/UP)")
+for i, row in C.iterrows():
+    ax_c.text(1.025, i, row.series.split(":")[0], transform=ax_c.get_yaxis_transform(),
+              va="center", fontsize=8, color="#333333")
+fig.text(5/WIDTH, 36/HEIGHT, "MEROPS: A01 aspartic; C01 papain-like; C13 legumain/VPE; M10 metallo;", fontsize=8)
+fig.text(5/WIDTH, 31/HEIGHT, "S08 subtilisin-like; S10 serine carboxypeptidase. All points: GP-up.", fontsize=8)
 
+ax_d = axmm(79, 8, 88, 13)
+title("d", "Insect inhibitor-set stage bias", 4, 28)
+D = D.reset_index(drop=True)
+y = np.arange(len(D))
+ax_d.errorbar(D.odds_ratio, y,
+    xerr=[D.odds_ratio-D.confidence_low, D.confidence_high-D.odds_ratio], fmt="o", markersize=4,
+    color=colors["Pupa-up"], ecolor="#555555", elinewidth=0.8, capsize=3)
+ax_d.axvline(1, linestyle="--", linewidth=0.7, color="#777777")
+ax_d.set_xscale("log", base=2)
+ax_d.set_xlim(0.8, 16)
+ax_d.set_xticks([1, 2, 4, 8, 16], ["1", "2", "4", "8", "16"])
+ax_d.set_yticks(y, ["All curated A+B", "Tier A named-reference"])
+ax_d.set_ylim(-0.5, 1.8)
+for i, row in D.iterrows():
+    ax_d.text(15.4, i+0.3, f"OR {row.odds_ratio:.2f}; FDR {row.padj:.2g}",
+              fontsize=8, va="bottom", ha="right")
+fig.text(79/WIDTH, 1/HEIGHT, "Odds ratio (95% CI); >1: pupa-up enrichment", fontsize=8)
 
-def draw_pca(fig, ax):
-    assert len(ROWS) == 6
-    handles = []
-    for group in META["groups"]:
-        selected = [r for r in ROWS if r["group"] == group["key"]]
-        assert len(selected) == 3
-        x = [number(r["PC1"]) for r in selected]
-        y = [number(r["PC2"]) for r in selected]
-        ax.scatter(x, y, s=58, c=group["color"], marker=group["marker"],
-                   linewidths=0.7, edgecolors="white", zorder=4)
-        handles.append(Line2D([], [], color="none", marker=group["marker"],
-                              markerfacecolor=group["color"], markeredgecolor="none",
-                              markersize=7, label=group["label"]))
-    for row in ROWS:
-        dx, dy = number(row["label_dx_points"]), number(row["label_dy_points"])
-        ax.annotate(row["sample_label"], (number(row["PC1"]), number(row["PC2"])),
-                    xytext=(dx, dy), textcoords="offset points", ha="center",
-                    va="center", fontsize=10, color="#222222",
-                    arrowprops={"arrowstyle": "-", "lw": 0.6, "color": "#777777",
-                                "shrinkA": 2, "shrinkB": 6} if row["leader_line"] == "TRUE" else None,
-                    zorder=5)
-    ax.set_xlabel(f'PC1: {META["PC1_variance_percent"]:.2f}% variance')
-    ax.set_ylabel(f'PC2: {META["PC2_variance_percent"]:.2f}% variance')
-    ax.set_xlim(META["x_limits"])
-    ax.set_ylim(META["y_limits"])
-    ax.set_xticks(META["x_ticks"])
-    ax.set_yticks(META["y_ticks"])
-    ax.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 1.07),
-              ncol=2, frameon=False, handletextpad=0.35, columnspacing=1.8)
-
-
-def draw_volcano(fig, ax):
-    counts = {g["key"]: sum(r["status"] == g["key"] for r in ROWS) for g in META["groups"]}
-    assert counts == META["expected_status_counts"], (counts, META["expected_status_counts"])
-    for row in ROWS:
-        lfc, padj = number(row["log2FoldChange"]), number(row["padj"])
-        expected = "Not tested" if not math.isfinite(padj) else "Non-DE"
-        if math.isfinite(padj) and padj < 0.01 and abs(lfc) >= 1:
-            expected = META["positive_status"] if lfc > 0 else META["negative_status"]
-        assert row["status"] == expected, row["gene_id"]
-    handles = []
-    for group in META["groups"]:
-        selected = [r for r in ROWS if r["status"] == group["key"] and r["plotted"] == "TRUE"]
-        if not selected:
-            continue
-        x = [number(r["log2FoldChange"]) for r in selected]
-        y = [number(r["plot_y"]) for r in selected]
-        marker = group["marker"]
-        ax.scatter(x, y, s=8 if marker == "x" else 5, color=group["color"], marker=marker,
-                   alpha=0.8 if marker == "x" else 0.62,
-                   linewidths=0.6 if marker == "x" else 0,
-                   zorder=group["zorder"])
-        handles.append(Line2D([], [], linestyle="none", marker=marker,
-                              color=group["color"], markersize=5,
-                              label=f'{group["label"]} (n = {counts[group["key"]]:,})'))
-    for x in [-1, 1]:
-        ax.axvline(x, color="#777777", lw=0.8, ls=(0, (4, 4)), zorder=0)
-    ax.axhline(2, color="#777777", lw=0.8, ls=(0, (4, 4)), zorder=0)
-    ax.set_xlabel(META["x_label"])
-    ax.set_ylabel(r'$-\log_{10}$ adjusted P')
-    ax.set_xlim(META["x_limits"])
-    ax.set_ylim(META["y_limits"])
-    ax.set_xticks(META["x_ticks"])
-    ax.set_yticks(META["y_ticks"], labels=META["y_tick_labels"])
-    order = META["legend_order"]
-    handles.sort(key=lambda h: order.index(h.get_label().split(" (n =")[0]))
-    ax.legend(handles=handles, loc="lower center", bbox_to_anchor=(0.5, 1.025),
-              ncol=2, frameon=False, handletextpad=0.4, columnspacing=1.7)
-
-
-def main():
-    fig, ax = setup()
-    if META["kind"] == "PCA":
-        draw_pca(fig, ax)
-    else:
-        draw_volcano(fig, ax)
-    stem = META["output_stem"]
-    fig.savefig(HERE / f"{stem}.pdf", metadata={"Creator": "Matplotlib",
-                "CreationDate": None, "ModDate": None})
-    fig.savefig(HERE / f"{stem}.png", dpi=300)
-    plt.close(fig)
-    print(f'{stem}: reproduced from {len(ROWS):,} source rows.')
-
-
-if __name__ == "__main__":
-    main()
+stem = args.outdir / "Figure_6"
+fig.savefig(stem.with_suffix(".pdf"), metadata={"Creator": "plot.py"})
+fig.savefig(stem.with_suffix(".png"), dpi=300)
+plt.close(fig)
+print("Figure 6: source rows 120; panels A/B/C/D 90/9/19/2; insect homologs 149; inhibitor families 18; larva shortlist 9; GP-up priority candidates 19.")

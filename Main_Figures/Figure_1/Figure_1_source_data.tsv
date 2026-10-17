@@ -1,0 +1,5 @@
+group	organism	comparison	replicates	unit	individuals_per_pool	petioles_per_replicate	color
+Larva	Quadrastichus erythrinae	Insect developmental comparison	3	pooled insect sample	10		#009E73
+Pupa	Quadrastichus erythrinae	Insect developmental comparison	3	pooled insect sample	10		#CC79A7
+GP	Erythrina variegata	Host-petiole comparison	3	whole petiole		1	#0072B2
+UP	Erythrina variegata	Host-petiole comparison	3	whole petiole		1	#D55E00

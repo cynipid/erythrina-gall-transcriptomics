@@ -10,6 +10,3 @@ Thumbs.db
 *.bai
 *.rds
 *.RData
-Main_Figures/**/*.pdf
-Main_Figures/**/Figure_*revised*.png
-Main_Figures/**/Figure_*corrected*.png

@@ -1,0 +1,5 @@
+*.pdf binary
+*.png binary
+*.docx binary
+*.rds.gz binary
+*.tsv -text

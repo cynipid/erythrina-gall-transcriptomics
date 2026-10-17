@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "figure": "S1",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S2",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S3",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S4",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S5",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S6",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S7",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    },
+    {
+      "figure": "S8",
+      "outdir_supported": true,
+      "production_png_pixel_match": true,
+      "pdf_created": true
+    }
+  ],
+  "production_non_script_files_unchanged": true
+}

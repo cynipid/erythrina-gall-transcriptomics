@@ -1,0 +1,21 @@
+{
+  "source_sha256": "e312fe481b99982122f2665d195ed36616c7840efb36c69026edd644220ead11",
+  "sample_order": [
+    "GP1",
+    "GP2",
+    "GP3",
+    "UP1",
+    "UP2",
+    "UP3"
+  ],
+  "matrix_shape": [
+    6,
+    6
+  ],
+  "minimum": 0.843533236803762,
+  "maximum": 1.0,
+  "all_cells_displayed_to_two_decimal_places": true,
+  "numeric_matrix_modified": false,
+  "analysis_rerun": false,
+  "rendering_note": "Final production artwork uses this portable Matplotlib script; source matrix and sample labels unchanged."
+}

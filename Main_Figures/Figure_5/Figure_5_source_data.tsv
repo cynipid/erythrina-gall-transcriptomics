@@ -1,50 +1,27 @@
-panel	category	series	value	gene_id	baseMean	log2FoldChange	padj	lfcSE
-A	No signal peptide, no TMR	Proteins	9037.0					
-A	Membrane, no SignalP SP	Proteins	1971.0					
-A	Classical-secretome candidate	Proteins	2039.0					
-A	SignalP SP with downstream TMR	Proteins	405.0					
-A	Discordant prediction (review)	Proteins	3.0					
-B	Pupa-up	Classical-secretome candidates	597.0					
-B	Larva-up	Classical-secretome candidates	544.0					
-B	Non-DE	Classical-secretome candidates	790.0					
-B	Excluded: low count	Classical-secretome candidates	105.0					
-B	NA adjusted P	Classical-secretome candidates	3.0					
-C	GH12 cellulase/endoglucanase	Pupa-up	8.0					
-C	GH12 cellulase/endoglucanase	Larva-up	3.0					
-C	GH12 cellulase/endoglucanase	Non-DE	2.0					
-C	GH12 cellulase/endoglucanase	Excluded: low count	0.0					
-C	GH12 cellulase/endoglucanase	NA adjusted P	0.0					
-C	Pectin/pectate lyase	Pupa-up	2.0					
-C	Pectin/pectate lyase	Larva-up	5.0					
-C	Pectin/pectate lyase	Non-DE	0.0					
-C	Pectin/pectate lyase	Excluded: low count	8.0					
-C	Pectin/pectate lyase	NA adjusted P	0.0					
-C	Canonical GH18 chitinase	Pupa-up	2.0					
-C	Canonical GH18 chitinase	Larva-up	4.0					
-C	Canonical GH18 chitinase	Non-DE	7.0					
-C	Canonical GH18 chitinase	Excluded: low count	0.0					
-C	Canonical GH18 chitinase	NA adjusted P	0.0					
-C	GH19 class-I chitinase	Pupa-up	0.0					
-C	GH19 class-I chitinase	Larva-up	4.0					
-C	GH19 class-I chitinase	Non-DE	4.0					
-C	GH19 class-I chitinase	Excluded: low count	1.0					
-C	GH19 class-I chitinase	NA adjusted P	0.0					
-C	CAP-domain protein	Pupa-up	4.0					
-C	CAP-domain protein	Larva-up	5.0					
-C	CAP-domain protein	Non-DE	6.0					
-C	CAP-domain protein	Excluded: low count	1.0					
-C	CAP-domain protein	NA adjusted P	0.0					
-D	CAP-domain protein	Larva-up classical-secretome candidate		egapxtmp_012094	11419.5138638171	-5.10661481768397	2.5576662678229002e-21	0.523375490545986
-D	CAP-domain protein	Larva-up classical-secretome candidate		egapxtmp_003886	3217.0761346357	-2.59743002758998	4.6657853384352e-09	0.423062010188644
-D	CAP-domain protein	Larva-up classical-secretome candidate		egapxtmp_001086	634.748014627425	-9.21121422363652	1.56450034982871e-06	1.81199587536663
-D	CAP-domain protein	Larva-up classical-secretome candidate		egapxtmp_006228	384.037537157176	-2.52070468170013	4.555953858200389e-13	0.335365058965921
-D	CAP-domain protein	Larva-up classical-secretome candidate		egapxtmp_003426	59.3961158567677	-6.29348143517936	2.41151130089328e-11	0.904555221175915
-D	Canonical GH18 chitinase	Larva-up classical-secretome candidate		egapxtmp_006997	8962.45218885511	-2.14699498128519	2.09577331724644e-06	0.427333005365063
-D	Canonical GH18 chitinase	Larva-up classical-secretome candidate		egapxtmp_001239	5189.19344370325	-8.91952982040252	4.60760239877538e-06	1.83448773859676
-D	Canonical GH18 chitinase	Larva-up classical-secretome candidate		egapxtmp_013028	3430.00160026527	-1.23375935206745	0.0028675674597893	0.378494406225145
-D	GH12 cellulase/endoglucanase	Larva-up classical-secretome candidate		egapxtmp_003591	23037.031746345	-3.31212963301946	2.79584849000679e-08	0.567757234802362
-D	GH12 cellulase/endoglucanase	Larva-up classical-secretome candidate		egapxtmp_001932	14362.6784495956	-8.58939139540672	6.30809484387096e-54	0.54603225115683
-D	GH12 cellulase/endoglucanase	Larva-up classical-secretome candidate		egapxtmp_007822	3133.77628492897	-6.89797858414685	4.56008507229504e-41	0.503726818399325
-D	GH19 class-I chitinase	Larva-up classical-secretome candidate		egapxtmp_007704	409.769859984499	-3.02251162668022	1.07471407569509e-08	0.503839862477097
-D	GH19 class-I chitinase	Larva-up classical-secretome candidate		egapxtmp_004785	94.9529292135122	-3.27105092382482	0.0001894023256767	0.815031463853738
-D	Pectin/pectate lyase	Larva-up classical-secretome candidate		egapxtmp_014649	4799.98161862041	-8.43961743903673	1.06101736404257e-07	1.50784746898998
+panel	category	series	count	gene_id	candidate_class	baseMean	log2FoldChange	padj	expression_status	signalp_prediction	has_TMR	MEROPS_families
+A	GP-up	Unique defense candidates	86									
+A	UP-up	Unique defense candidates	28									
+A	Non-DE	Unique defense candidates	518									
+A	NA adjusted P	Unique defense candidates	14									
+A	Excluded by refined mask	Unique defense candidates	3									
+A	Outside final tested universe	Unique defense candidates	157									
+B	PR proteins	GP-up	39									
+B	PR proteins	UP-up	8									
+B	Jasmonate-associated	GP-up	5									
+B	Jasmonate-associated	UP-up	7									
+B	Salicylate-associated	GP-up	2									
+B	Salicylate-associated	UP-up	0									
+B	Peptidases	GP-up	40									
+B	Peptidases	UP-up	13									
+B	Peptidase inhibitors	GP-up	8									
+B	Peptidase inhibitors	UP-up	0									
+C	Selected GP-up candidates	Peptidase		TRINITY_DN520_c1_g1	Peptidase	520.017549218895	3.15395401541697	0.0000000000857759709861966	GP_up	SP	FALSE	S10
+C	Selected GP-up candidates	PR6/Kunitz inhibitor		TRINITY_DN4958_c0_g1	PR6/Kunitz inhibitor	1287.74183886786	3.47714788210864	0.0000000000749279767670404	GP_up	SP	FALSE	I03A
+C	Selected GP-up candidates	Peptidase		TRINITY_DN13180_c0_g1	Peptidase	151.103679803419	4.27412720421574	0.000000000982098952522012	GP_up	SP	FALSE	S08A
+C	Selected GP-up candidates	PR6/Kunitz inhibitor		TRINITY_DN60637_c0_g1	PR6/Kunitz inhibitor	7656.15895768843	5.90645282525421	0.000000000000123613134472671	GP_up	SP	FALSE	I03A
+C	Selected GP-up candidates	PR9 peroxidase		TRINITY_DN11853_c0_g1	PR9 peroxidase	1218.65039981339	8.1353051294058	0.000000000000000000000199658132574884	GP_up	SP	FALSE	
+C	Selected GP-up candidates	PR6/Kunitz inhibitor		TRINITY_DN8134_c0_g1	PR6/Kunitz inhibitor	735.545361252354	9.36881155022228	0.00000000074133114114585	GP_up	SP	FALSE	I03A
+C	Selected GP-up candidates	Peptidase		TRINITY_DN11522_c0_g1	Peptidase	200.848697241208	10.7545424855973	0.0000000000000178422248153718	GP_up	SP	FALSE	C01A
+C	Selected GP-up candidates	Peptidase		TRINITY_DN27036_c0_g1	Peptidase	209.018355131111	10.9964531687837	0.0000000586696732521244	GP_up	SP	FALSE	C01A
+C	Selected GP-up candidates	Peptidase		TRINITY_DN8699_c0_g1	Peptidase	292.836281572639	11.231436135248	0.00000000761551992213737	GP_up	SP	FALSE	S10
+C	Selected GP-up candidates	PR6/Kunitz inhibitor		TRINITY_DN99535_c0_g1	PR6/Kunitz inhibitor	666.333114292807	12.709798992159	0.000000000205352594105874	GP_up	SP	FALSE	I03A

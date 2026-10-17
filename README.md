@@ -20,7 +20,11 @@ Samples originated from one *Erythrina variegata* tree at Academia Sinica, Taipe
 
 | Location | Contents |
 | --- | --- |
-| `Main_Figures/Figure_1` through `Figure_10` | Current plotting scripts, direct figure-source data and required inputs. |
+| `Main_Figures/Figure_1` through `Figure_6` | Final captions, plotting scripts and frozen source inputs; production artwork for Figures 2–6. Figure 1 is regenerated from its full-resolution photo input. |
+| `Supplementary_Figures/Figure_S1` through `Figure_S8` | Final supplementary PDF/PNG files, captions, plotting scripts and frozen source inputs. |
+| `Main_Figures/Main_Figure_Captions.docx` | Editable main captions preserving scientific italics and subscripts. |
+| `Supplementary_Figures/build_preview.py` | Builds the combined supplementary PDF from the included individual PDFs and formatted captions. |
+| `docs/Figure_Numbering_Map.tsv` | Previous-to-final numbering map for all fourteen figures. |
 | `Analysis/plant/` | Forty original scripts, 14 compressed inputs/checkpoints, final-branch execution logs and version records. |
 | `Analysis/insect/` | Twenty-seven original scripts, selected count/QC/prediction inputs and a retained QC session record. |
 | `Analysis/annotations_merops/` | Eighty-two annotation/MEROPS source files and a final-status overlay for historical plant priority candidates. |
@@ -31,16 +35,28 @@ Samples originated from one *Erythrina variegata* tree at Academia Sinica, Taipe
 
 Raw FASTQ reads and the complete plant assembly are deposited through GEO rather than included here. Selected analysis count tables, intermediate objects and annotation resources are included in compressed form; consult each analysis README and manifest for exact contents.
 
-## Reproduce the main figures
+## Final figure organization
+
+The final manuscript has six main figures and eight supplementary figures. The insect and plant PCA and volcano plots are supplementary. Every numbered folder contains its current caption, a portable `plot.py` and frozen source data. Individual production artwork is included for main Figures 2–6 and supplementary Figures S1–S8. Main Figure 1 and the two combined previews are generated locally; their full-resolution masters are also supplied in the final figure ZIP packages. The four optional generated-file paths are listed in `docs/MASTER_FILE_UPLOAD_LIST.tsv`. `Figure_Index.tsv` in each figure collection lists the exact files. The earlier ten-main-figure layout is mapped in `docs/Figure_Numbering_Map.tsv`.
+
+The 15 October Figure 1 revision is retained. Main Figure 5 uses lowercase panel letters matching its caption. Supplementary correlation plots S2 and S6 have reproducible portable layouts with unchanged coefficients and sample labels. S2 includes its recovered full-precision correlation matrix, frozen transformed input, sample crosswalk and documented optional extraction script. Statistical models were not refitted.
+
+The existing v1.0.0 release retains the original figure numbering. This commit consolidates the final layout on `main`; its frozen scientific estimates remain the same. Cite an explicit archived version when finalizing the manuscript's code-availability statement.
+
+## Reproduce the figures
 
 Use Python 3 in a separate environment. From the repository root:
 
 ```bash
 python -m pip install -r requirements.txt
-python rebuild_all.py
+python rebuild_all.py --outdir /path/to/new/EGW_rebuilt_figures
 ```
 
-PDF and PNG outputs are written within each figure folder. The plotting requirements are separate from the R, scheduler and external-tool requirements of the archived analyses. PCA panels use frozen coordinates. Figure 9 uses `TRINITY_DN27036_c0_g1` and can regenerate its source table from the supplied candidate overlay. Figure scripts plot existing estimates; they do not rerun differential expression, enrichment, secretion prediction or MEROPS searches.
+The command rebuilds all fourteen individual figures. Use `--group main` or `--group supplementary` for one collection. Without `--outdir`, outputs are written beside the supplied source files. Each collection also has its own `rebuild_all.py` and `build_preview.py`. The preview builder uses the figure PDFs and formatted captions in that collection.
+
+All fourteen plot scripts were executed in isolated output directories and their PNG pixels match the distributed final production artwork. PDF metadata may vary between runs. PCA panels use frozen coordinates; correlation panels plot supplied full-precision matrices. Main Figure 5 contains `TRINITY_DN27036_c0_g1` and regenerates its source summary from the supplied candidate overlay. Ordinary plotting does not require RDS conversion. Optional S2 source extraction requires `rdata==1.1.0`.
+
+The plotting requirements are separate from the R, scheduler and external-tool requirements of the archived analyses. Figure scripts use existing estimates and classifications; they do not rerun differential-expression models, enrichment, secretion prediction or MEROPS searches.
 
 ## Restore archived inputs
 

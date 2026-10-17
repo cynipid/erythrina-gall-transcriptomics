@@ -1,7 +1,121 @@
-sample_id	sample_label	group	PC1	PC2	label_dx_points	label_dy_points	leader_line
-LTS20_VA01_Sample_S7	GP1	GP	-37.0326590151727	38.0339687032085	0	13	FALSE
-LTS20_VA01_Sample_S8	GP2	GP	-45.669766331377	-29.1807774011357	0	13	FALSE
-LTS20_VA01_Sample_S9	GP3	GP	-52.4253760208057	-4.83707175616923	-1	13	FALSE
-LTS20_VA01_Sample_S10	UP1	UP	42.8967542634136	-2.34339055650246	-25	3	TRUE
-LTS20_VA01_Sample_S11	UP2	UP	46.0945336504115	1.61660085954686	0	20	TRUE
-LTS20_VA01_Sample_S12	UP3	UP	46.1365134535303	-3.289329848948	21	-20	TRUE
+panel	gene_id	category	series	count	log2FoldChange	padj	odds_ratio	confidence_low	confidence_high	legacy_display_log2FoldChange	original_log2FoldChange	plotted_log2FoldChange	original_contrast	plotted_contrast	coefficient_type	lfcSE
+A		I21	Pupa-up	0.0												
+A		I21	Larva-up	0.0												
+A		I21	Non-DE	1.0												
+A		I21	NA adjusted P	0.0												
+A		I21	Excluded: low count	0.0												
+A		I17	Pupa-up	1.0												
+A		I17	Larva-up	0.0												
+A		I17	Non-DE	0.0												
+A		I17	NA adjusted P	0.0												
+A		I17	Excluded: low count	0.0												
+A		I71	Pupa-up	1.0												
+A		I71	Larva-up	0.0												
+A		I71	Non-DE	0.0												
+A		I71	NA adjusted P	0.0												
+A		I71	Excluded: low count	0.0												
+A		I29	Pupa-up	0.0												
+A		I29	Larva-up	0.0												
+A		I29	Non-DE	1.0												
+A		I29	NA adjusted P	0.0												
+A		I29	Excluded: low count	0.0												
+A		I68	Pupa-up	0.0												
+A		I68	Larva-up	1.0												
+A		I68	Non-DE	0.0												
+A		I68	NA adjusted P	0.0												
+A		I68	Excluded: low count	0.0												
+A		I83	Pupa-up	1.0												
+A		I83	Larva-up	0.0												
+A		I83	Non-DE	0.0												
+A		I83	NA adjusted P	0.0												
+A		I83	Excluded: low count	0.0												
+A		I84	Pupa-up	1.0												
+A		I84	Larva-up	0.0												
+A		I84	Non-DE	0.0												
+A		I84	NA adjusted P	0.0												
+A		I84	Excluded: low count	0.0												
+A		I31	Pupa-up	0.0												
+A		I31	Larva-up	0.0												
+A		I31	Non-DE	2.0												
+A		I31	NA adjusted P	0.0												
+A		I31	Excluded: low count	0.0												
+A		I39	Pupa-up	0.0												
+A		I39	Larva-up	0.0												
+A		I39	Non-DE	2.0												
+A		I39	NA adjusted P	0.0												
+A		I39	Excluded: low count	0.0												
+A		I15	Pupa-up	0.0												
+A		I15	Larva-up	0.0												
+A		I15	Non-DE	3.0												
+A		I15	NA adjusted P	0.0												
+A		I15	Excluded: low count	0.0												
+A		I02	Pupa-up	2.0												
+A		I02	Larva-up	0.0												
+A		I02	Non-DE	2.0												
+A		I02	NA adjusted P	0.0												
+A		I02	Excluded: low count	0.0												
+A		I51	Pupa-up	2.0												
+A		I51	Larva-up	1.0												
+A		I51	Non-DE	1.0												
+A		I51	NA adjusted P	0.0												
+A		I51	Excluded: low count	0.0												
+A		I04	Pupa-up	0.0												
+A		I04	Larva-up	4.0												
+A		I04	Non-DE	2.0												
+A		I04	NA adjusted P	0.0												
+A		I04	Excluded: low count	0.0												
+A		I19	Pupa-up	2.0												
+A		I19	Larva-up	3.0												
+A		I19	Non-DE	2.0												
+A		I19	NA adjusted P	0.0												
+A		I19	Excluded: low count	1.0												
+A		I01	Pupa-up	1.0												
+A		I01	Larva-up	2.0												
+A		I01	Non-DE	7.0												
+A		I01	NA adjusted P	0.0												
+A		I01	Excluded: low count	0.0												
+A		I08	Pupa-up	10.0												
+A		I08	Larva-up	4.0												
+A		I08	Non-DE	5.0												
+A		I08	NA adjusted P	0.0												
+A		I08	Excluded: low count	0.0												
+A		I43	Pupa-up	28.0												
+A		I43	Larva-up	2.0												
+A		I43	Non-DE	11.0												
+A		I43	NA adjusted P	0.0												
+A		I43	Excluded: low count	0.0												
+A		I63	Pupa-up	19.0												
+A		I63	Larva-up	6.0												
+A		I63	Non-DE	18.0												
+A		I63	NA adjusted P	0.0												
+A		I63	Excluded: low count	0.0												
+B	egapxtmp_014012	Focused larva-up inhibitor candidate	I04 serpin		-1.2801349640314	2.65339798783574e-09				1.2801349640314	-1.2801349640314	-1.2801349640314	pupa/larva	pupa/larva	unshrunk	0.205389505045373
+B	egapxtmp_012294	Focused larva-up inhibitor candidate	I04 serpin		-1.59261294268824	2.55965766792498e-14				1.59261294268824	-1.59261294268824	-1.59261294268824	pupa/larva	pupa/larva	unshrunk	0.201656462238479
+B	egapxtmp_012068	Focused larva-up inhibitor candidate	I04 serpin		-1.7145500010763	1.51617577050095e-08				1.7145500010763	-1.7145500010763	-1.7145500010763	pupa/larva	pupa/larva	unshrunk	0.288681716243558
+B	egapxtmp_012082	Focused larva-up inhibitor candidate	I04 serpin		-1.87084231174661	6.31068441135307e-06				1.87084231174661	-1.87084231174661	-1.87084231174661	pupa/larva	pupa/larva	unshrunk	0.390101624180981
+B	egapxtmp_013537	Focused larva-up inhibitor candidate	I01 Kazal-type		-1.94568818249515	1.3855194789176099e-11				1.94568818249515	-1.94568818249515	-1.94568818249515	pupa/larva	pupa/larva	unshrunk	0.276458599228575
+B	egapxtmp_008367	Focused larva-up inhibitor candidate	I01 Kazal-type		-3.53132609973	0.0004990194995519				3.53132609973	-3.53132609973	-3.53132609973	pupa/larva	pupa/larva	unshrunk	0.938653390267582
+B	egapxtmp_008997	Focused larva-up inhibitor candidate	I19 pacifastin		-4.47119923044714	9.2643914108931e-35				4.47119923044714	-4.47119923044714	-4.47119923044714	pupa/larva	pupa/larva	unshrunk	0.355566274631643
+B	egapxtmp_009605	Focused larva-up inhibitor candidate	I19 pacifastin		-4.52273174587654	3.02175913882441e-16				4.52273174587654	-4.52273174587654	-4.52273174587654	pupa/larva	pupa/larva	unshrunk	0.535187911054596
+B	egapxtmp_008876	Focused larva-up inhibitor candidate	I19 pacifastin		-5.93036163384675	1.91127002362553e-38				5.93036163384675	-5.93036163384675	-5.93036163384675	pupa/larva	pupa/larva	unshrunk	0.447910470112945
+C	TRINITY_DN10831_c0_g1	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		1.18706661495631	0.0015020808333974				1.18706661495631	1.18706661495631	1.18706661495631	GP/UP	GP/UP	unshrunk	0.314884107286783
+C	TRINITY_DN16536_c0_g1	Final GP-up priority plant peptidase candidate	S10: serine carboxypeptidase		1.58038252793094	8.7871030718e-05				1.58038252793094	1.58038252793094	1.58038252793094	GP/UP	GP/UP	unshrunk	0.349118050741069
+C	TRINITY_DN10559_c0_g1	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		1.75596663121226	0.0030269904792241				1.75596663121226	1.75596663121226	1.75596663121226	GP/UP	GP/UP	unshrunk	0.493643488487401
+C	TRINITY_DN12503_c0_g2	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		1.89056956172539	7.9145599078e-06				1.89056956172539	1.89056956172539	1.89056956172539	GP/UP	GP/UP	unshrunk	0.371635858825595
+C	TRINITY_DN5478_c1_g1	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		2.15461085252017	0.0005394742971177				2.15461085252017	2.15461085252017	2.15461085252017	GP/UP	GP/UP	unshrunk	0.5304420882853
+C	TRINITY_DN11116_c0_g1	Final GP-up priority plant peptidase candidate	S08: subtilisin-like serine peptidase		2.16373883874269	0.0022001825864293				2.16373883874269	2.16373883874269	2.16373883874269	GP/UP	GP/UP	unshrunk	0.591978553900903
+C	TRINITY_DN107968_c0_g1	Final GP-up priority plant peptidase candidate	S08: subtilisin-like serine peptidase		2.47609506249158	5.8170760084e-06				2.47609506249158	2.47609506249158	2.47609506249158	GP/UP	GP/UP	unshrunk	0.479868057331551
+C	TRINITY_DN6211_c0_g1	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		2.74862958867999	0.0025469353922896				2.74862958867999	2.74862958867999	2.74862958867999	GP/UP	GP/UP	unshrunk	0.761284095713301
+C	TRINITY_DN5638_c0_g1	Final GP-up priority plant peptidase candidate	C13: legumain/VPE		2.84122914597433	0.0012975670834979				2.84122914597433	2.84122914597433	2.84122914597433	GP/UP	GP/UP	unshrunk	0.745276284000763
+C	TRINITY_DN12242_c0_g1	Final GP-up priority plant peptidase candidate	C01: papain-like cysteine peptidase		2.84131589878079	2.951899744e-06				2.84131589878079	2.84131589878079	2.84131589878079	GP/UP	GP/UP	unshrunk	0.53502399607385
+C	TRINITY_DN110519_c0_g1	Final GP-up priority plant peptidase candidate	C01: papain-like cysteine peptidase		3.06096121392119	2.340960328e-07				3.06096121392119	3.06096121392119	3.06096121392119	GP/UP	GP/UP	unshrunk	0.52525290821106
+C	TRINITY_DN520_c1_g1	Final GP-up priority plant peptidase candidate	S10: serine carboxypeptidase		3.15395401541697	8.57759e-11				3.15395401541697	3.15395401541697	3.15395401541697	GP/UP	GP/UP	unshrunk	0.440422349059787
+C	TRINITY_DN98789_c0_g1	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		3.8777561625701	6.6327524257e-05				3.8777561625701	3.8777561625701	3.8777561625701	GP/UP	GP/UP	unshrunk	0.843985131858878
+C	TRINITY_DN5745_c0_g1	Final GP-up priority plant peptidase candidate	M10: metallopeptidase		3.90269032611148	0.0010027763161216				3.90269032611148	3.90269032611148	3.90269032611148	GP/UP	GP/UP	unshrunk	1.00361744591937
+C	TRINITY_DN13180_c0_g1	Final GP-up priority plant peptidase candidate	S08: subtilisin-like serine peptidase		4.27412720421574	9.820989e-10				4.27412720421574	4.27412720421574	4.27412720421574	GP/UP	GP/UP	unshrunk	0.630287534219921
+C	TRINITY_DN7055_c0_g1	Final GP-up priority plant peptidase candidate	A01: aspartic peptidase A1		5.82685774825501	1.9612289212e-06				5.82685774825501	5.82685774825501	5.82685774825501	GP/UP	GP/UP	unshrunk	1.07953456615024
+C	TRINITY_DN11522_c0_g1	Final GP-up priority plant peptidase candidate	C01: papain-like cysteine peptidase		10.7545424855973	1.78e-14				10.7545424855973	10.7545424855973	10.7545424855973	GP/UP	GP/UP	unshrunk	1.28816736398851
+C	TRINITY_DN27036_c0_g1	Final GP-up priority plant peptidase candidate	C01: papain-like cysteine peptidase		10.9964531687837	5.86696732e-08				10.9964531687837	10.9964531687837	10.9964531687837	GP/UP	GP/UP	unshrunk	1.80548639633566
+C	TRINITY_DN8699_c0_g1	Final GP-up priority plant peptidase candidate	S10: serine carboxypeptidase		11.231436135248	7.6155199e-09				11.231436135248	11.231436135248	11.231436135248	GP/UP	GP/UP	unshrunk	1.74256623668118
+D		All curated A+B candidates	Pupa-up enrichment	149.0		8.87897010259435e-06	2.90927760018073	1.75857178643653	4.970434586004							
+D		Tier A named-reference matches	Pupa-up enrichment	64.0		4.26813857159278e-05	4.03631916100427	1.89533182913674	9.58488937932444							

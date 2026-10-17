@@ -1,0 +1,114 @@
+[
+  {
+    "figure": "S1",
+    "production_size": [
+      2125,
+      1476
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S2",
+    "production_size": [
+      2640,
+      2320
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      399.9992,
+      399.9992
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S3",
+    "production_size": [
+      2125,
+      1594
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S4",
+    "production_size": [
+      2160,
+      1620
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S5",
+    "production_size": [
+      2125,
+      1476
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S6",
+    "production_size": [
+      2640,
+      2320
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      399.9992,
+      399.9992
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S7",
+    "production_size": [
+      2125,
+      1594
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  },
+  {
+    "figure": "S8",
+    "production_size": [
+      2160,
+      1620
+    ],
+    "pixels_identical": true,
+    "dpi": [
+      299.9994,
+      299.9994
+    ],
+    "visually_checked": true,
+    "pdf_valid": true
+  }
+]

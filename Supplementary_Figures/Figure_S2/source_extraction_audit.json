@@ -1,0 +1,51 @@
+{
+  "frozen_rds_sha256": "758e139a6eb7eaeecec576c4d3c8c97eb73834826c39e1a3fc3493e1bc8c3e10",
+  "decoder": "rdata 1.1.0",
+  "numpy": "2.5.4",
+  "assay_dimensions": [
+    13919,
+    6
+  ],
+  "original_sample_ids": [
+    "L1",
+    "L3",
+    "L4",
+    "P3",
+    "P4",
+    "P5"
+  ],
+  "display_sample_ids": [
+    "L1",
+    "L2",
+    "L3",
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "sample_order_checked_against": "RDS assay dimnames, RDS colData, frozen PCA sample key",
+  "gzip_layers_unwrapped": 2,
+  "calculation": "Pearson sample correlations of stored frozen VST assay values",
+  "every_rounded_coefficient_matches_retained_artwork": true,
+  "model_or_vst_or_pca_recomputed": false,
+  "decoder_warnings": [
+    "Unknown file type: assumed RDS",
+    "Missing constructor for R class \"package_version\". The constructor for class \"numeric_version\" will be used instead.",
+    "Missing constructor for R class \"numeric_version\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DFrame\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"SimpleList\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"SimpleAssays\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DFrame\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DFrame\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"PartitioningByEnd\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DFrame\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DFrame\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DFrame\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"Seqinfo\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"IRanges\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"Rle\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"Rle\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"GRanges\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"CompressedGRangesList\". The underlying R object is returned instead.",
+    "Missing constructor for R class \"DESeqTransform\". The underlying R object is returned instead."
+  ]
+}
