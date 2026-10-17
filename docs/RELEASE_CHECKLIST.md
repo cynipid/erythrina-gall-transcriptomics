@@ -11,7 +11,7 @@
 
 ## Before publishing a manuscript release
 
-- Choose a license for original code; preserve third-party terms and photo attribution.
+- Original code uses the MIT License (2026 Serdar Dinç); the README defines its scope and preserves third-party terms and photo attribution.
 - Confirm the intended repository visibility and reviewer access arrangements.
 - Upload the documentation update and verify the repository checksum manifest.
 - Create the manuscript release and record its tag and commit in Code Availability.

@@ -73,4 +73,4 @@ Differential expression requires adjusted P < 0.01 and absolute unshrunk log2 fo
 
 The Figure 1 photograph is reproduced from Lin, Tung and Yang (2021), *Forests* **12**, 948, Fig. 1B, under CC BY 4.0. See `Main_Figures/Figure_1/PHOTO_ATTRIBUTION.txt` and https://doi.org/10.3390/f12070948.
 
-A license for the author's original code has not yet been selected. This documentation does not grant a new license to third-party software, databases, annotations or the photograph; their applicable terms and attribution remain in force.
+The author's original analysis scripts, plotting scripts and utility code are licensed under the MIT License; see `LICENSE`. Copyright (c) 2026 Serdar Dinç. The MIT License applies to original code and its associated documentation only. It does not relicense research data, third-party software, database-derived annotations, reference resources or the Figure 1 photograph. Their applicable terms and attribution remain in force.
