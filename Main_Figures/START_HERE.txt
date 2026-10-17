@@ -36,7 +36,7 @@ The Figure 1 photograph retains its separate CC BY 4.0 attribution.
 Figure 1 uses the accepted 15 October revision. Figure 5 has lowercase a/b/c panel
 letters matching its caption; the remaining artwork pixels are unchanged.
 
-Repository delivery note: the complete publication masters are supplied in the final
-figure ZIP packages. This repository includes every script, caption and frozen input.
-Main Figure 1 PDF/PNG and the two combined preview PDFs can be generated locally.
-See docs/MASTER_FILE_UPLOAD_LIST.tsv at repository root for these four file paths.
+Repository delivery note: all final PDF/PNG artwork and both combined preview PDFs
+are included, together with every script, caption and frozen input. The publication
+masters match the final figure ZIP packages. See docs/MASTER_FILE_UPLOAD_LIST.tsv
+at repository root for the four separately uploaded master-file paths.
