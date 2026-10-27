@@ -4,6 +4,10 @@
 Requires Python 3, pandas, numpy, and matplotlib. Run from any working directory:
     python /path/to/plot.py
 No expression analysis, MEROPS search, or enrichment test is rerun.
+
+Display revision 2026-10-26: enlarge the full plant candidate identifiers
+to 10 pt at the native 180 mm width and increase their row spacing.
+Only typography and panel placement change; frozen values and ordering remain.
 """
 from pathlib import Path
 import argparse
@@ -50,7 +54,7 @@ def title(letter, text, x, top):
     fig.text(x/WIDTH, top/HEIGHT, letter, fontsize=11, fontweight="bold", va="top")
     fig.text((x+7)/WIDTH, top/HEIGHT, text, fontsize=9, fontweight="bold", va="top")
 
-ax_a = axmm(15, 166, 55, 59)
+ax_a = axmm(15, 175, 55, 52)
 title("a", "Insect inhibitor-family homologs", 4, 237)
 fig.text(15/WIDTH, 229/HEIGHT, "149 candidates; 18 MEROPS families", fontsize=8)
 order = list(A.category.drop_duplicates())
@@ -67,10 +71,10 @@ ax_a.set_ylim(-0.6, len(order)-0.4)
 ax_a.set_xticks([0, 10, 20, 30, 40])
 ax_a.set_xlabel("Candidate genes")
 handles = [Patch(facecolor=colors[s], label=s) for s in statuses if matrix[s].sum()]
-fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(6/WIDTH, 155/HEIGHT), ncol=2,
+fig.legend(handles=handles, loc="upper left", bbox_to_anchor=(6/WIDTH, 164/HEIGHT), ncol=2,
            frameon=False, fontsize=8, columnspacing=1.1, handlelength=1.1, handletextpad=0.4)
 
-ax_b = axmm(115, 166, 57, 59)
+ax_b = axmm(115, 175, 57, 52)
 title("b", "Larva-up inhibitor candidates", 78, 237)
 fig.text(83/WIDTH, 229/HEIGHT, "Nine candidates with Pfam-family support", fontsize=8)
 B = B.sort_values("legacy_display_log2FoldChange", ascending=True).reset_index(drop=True)
@@ -79,6 +83,7 @@ ax_b.hlines(y, B.plotted_log2FoldChange, 0, color="#B9B9B9", linewidth=0.6)
 ax_b.scatter(B.plotted_log2FoldChange, y, s=24, color=colors["Larva-up"], edgecolor="white", linewidth=0.4, zorder=3)
 ax_b.axvline(-1, color="#777777", linewidth=0.7, linestyle="--")
 ax_b.set_yticks(y, B.gene_id)
+ax_b.tick_params(axis="y", labelsize=9)
 ax_b.set_ylim(-0.6, len(B)-0.4)
 ax_b.set_xlim(-6.75, 0.3)
 ax_b.set_xticks([-6, -4, -2, 0])
@@ -90,18 +95,18 @@ for i, row in B.iterrows():
                   xytext=(-4 if label_left else 4, 0), textcoords="offset points",
                   ha="right" if label_left else "left", va="center", fontsize=8)
     ax_b.text(0.98, i, family, transform=ax_b.get_yaxis_transform(), va="center", ha="right", fontsize=8)
-fig.text(82/WIDTH, 149/HEIGHT, "I01: Kazal-type; I04: serpin", fontsize=8)
-fig.text(82/WIDTH, 144/HEIGHT, "I19: pacifastin", fontsize=8)
+fig.text(82/WIDTH, 154/HEIGHT, "I01: Kazal-type; I04: serpin; I19: pacifastin", fontsize=8)
 
-ax_c = axmm(56, 52, 105, 77)
-title("c", "GP-up plant peptidase candidates", 4, 140)
-fig.text(11/WIDTH, 133/HEIGHT, "Final refined-mask priority 1 + 2 classical-secretome candidates (n = 19)", fontsize=8)
+ax_c = axmm(56, 50, 105, 85)
+title("c", "GP-up plant peptidase candidates", 4, 148)
+fig.text(11/WIDTH, 141/HEIGHT, "Final refined-mask priority 1 + 2 classical-secretome candidates (n = 19)", fontsize=8)
 C = C.sort_values("plotted_log2FoldChange", ascending=True).reset_index(drop=True)
 y = np.arange(len(C))
 ax_c.hlines(y, 0, C.plotted_log2FoldChange, color="#B9B9B9", linewidth=0.6)
 ax_c.scatter(C.plotted_log2FoldChange, y, s=23, color=colors["GP-up"], edgecolor="white", linewidth=0.4, zorder=3)
 ax_c.axvline(1, color="#777777", linewidth=0.7, linestyle="--")
 ax_c.set_yticks(y, C.gene_id)
+ax_c.tick_params(axis="y", labelsize=10, pad=3)
 ax_c.set_ylim(-0.55, len(C)-0.45)
 ax_c.set_xlim(0, 12)
 ax_c.set_xticks([0, 2, 4, 6, 8, 10, 12])

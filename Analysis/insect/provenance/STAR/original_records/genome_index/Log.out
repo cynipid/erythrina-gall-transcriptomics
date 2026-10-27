@@ -1,0 +1,151 @@
+STAR version=2.7.10b
+STAR compilation time,server,dir=2022-11-01T09:53:26-04:00 :/home/dobin/data/STAR/STARcode/STAR.master/source
+STAR git: On branch master ; commit c6f8efc2c7043ef83bf8b0d9bed36bbb6b9b1133 ; diff files: CHANGES.md 
+##### Command Line:
+/opt/conda/bin/STAR --runMode genomeGenerate --genomeDir genome_index --genomeFastaFiles ref/complete.genomic.fna --sjdbGTFfile ref/complete.genomic.gtf --sjdbOverhang 149 --genomeSAindexNbases 13 --runThreadN 56
+##### Initial USER parameters from Command Line:
+###### All USER parameters from Command Line:
+runMode                       genomeGenerate        ~RE-DEFINED
+genomeDir                     genome_index     ~RE-DEFINED
+genomeFastaFiles              ref/complete.genomic.fna        ~RE-DEFINED
+sjdbGTFfile                   ref/complete.genomic.gtf     ~RE-DEFINED
+sjdbOverhang                  149     ~RE-DEFINED
+genomeSAindexNbases           13     ~RE-DEFINED
+runThreadN                    56     ~RE-DEFINED
+##### Finished reading parameters from all sources
+
+##### Final user re-defined parameters-----------------:
+runMode                           genomeGenerate   
+runThreadN                        56
+genomeDir                         genome_index
+genomeFastaFiles                  ref/complete.genomic.fna   
+genomeSAindexNbases               13
+sjdbGTFfile                       ref/complete.genomic.gtf
+sjdbOverhang                      149
+
+-------------------------------
+##### Final effective command line:
+/opt/conda/bin/STAR   --runMode genomeGenerate      --runThreadN 56   --genomeDir genome_index   --genomeFastaFiles ref/complete.genomic.fna      --genomeSAindexNbases 13   --sjdbGTFfile ref/complete.genomic.gtf   --sjdbOverhang 149
+----------------------------------------
+
+Number of fastq files for each mate = 1
+ParametersSolo: --soloCellFilterType CellRanger2.2 filtering parameters:  3000 0.99 10
+Finished loading and checking parameters
+--genomeDir directory exists and will be overwritten: genome_index/
+Jun 25 20:54:11 ... starting to generate Genome files
+ref/complete.genomic.fna : chr # 0  "ctg00000037.1" chrStart: 0
+ref/complete.genomic.fna : chr # 1  "Chromosome1" chrStart: 262144
+ref/complete.genomic.fna : chr # 2  "Chromosome2" chrStart: 99352576
+ref/complete.genomic.fna : chr # 3  "Chromosome3" chrStart: 191102976
+ref/complete.genomic.fna : chr # 4  "Chromosome4" chrStart: 266862592
+ref/complete.genomic.fna : chr # 5  "Chromosome5" chrStart: 340262912
+Chromosome sequence lengths: 
+ctg00000037.1	16709
+Chromosome1	99084735
+Chromosome2	91510328
+Chromosome3	75620962
+Chromosome4	73275588
+Chromosome5	59692292
+Genome sequence total length = 399200614
+Genome size with padding = 400031744
+Jun 25 20:54:16 ..... processing annotations GTF
+Processing pGe.sjdbGTFfile=ref/complete.genomic.gtf, found:
+		26908 transcripts
+		210705 exons (non-collapsed)
+		92925 collapsed junctions
+Total junctions: 92925
+Jun 25 20:54:20 ..... finished GTF processing
+
+Estimated genome size with padding and SJs: total=genome+SJ=699031744 = 400031744 + 299000000
+GstrandBit=32
+Number of SA indices: 798394228
+Jun 25 20:54:21 ... starting to sort Suffix Array. This may take a long time...
+Number of chunks: 63;   chunks size limit: 116130064 bytes
+Jun 25 20:54:22 ... sorting Suffix Array chunks and saving them to disk...
+Writing 93981928 bytes into genome_index//SA_5 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 73976816 bytes into genome_index//SA_17 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 92545728 bytes into genome_index//SA_53 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 92724560 bytes into genome_index//SA_50 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 102909328 bytes into genome_index//SA_54 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 104242192 bytes into genome_index//SA_3 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 88621848 bytes into genome_index//SA_12 ; empty space on disk = 4025823313174528 bytes ... done
+Writing 106808624 bytes into genome_index//SA_55 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 112196864 bytes into genome_index//SA_4 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 67590376 bytes into genome_index//SA_30 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 111286016 bytes into genome_index//SA_6 ; empty space on disk = 4025820466847744 bytes ...Writing 90103472 bytes into genome_index//SA_43 ; empty space on disk = 4025820466847744 bytes ... done
+ done
+Writing 98113056 bytes into genome_index//SA_48 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 103271904 bytes into genome_index//SA_52 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 84212256 bytes into genome_index//SA_18 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 85106240 bytes into genome_index//SA_1 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 109031240 bytes into genome_index//SA_7 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 84211960 bytes into genome_index//SA_2 ; empty space on disk = 4025820466847744 bytes ...Writing 115762032 bytes into genome_index//SA_10 ; empty space on disk = 4025820466847744 bytes ... done
+ done
+Writing 108555176 bytes into genome_index//SA_11 ; empty space on disk = 4025820466847744 bytes ... done
+Writing 101637992 bytes into genome_index//SA_23 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 107335648 bytes into genome_index//SA_45 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 111592600 bytes into genome_index//SA_9 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 94791056 bytes into genome_index//SA_19 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 115941376 bytes into genome_index//SA_14 ; empty space on disk = 4025819832573952 bytes ...Writing 100864608 bytes into genome_index//SA_36 ; empty space on disk = 4025819832573952 bytes ... done
+ done
+Writing 101172960 bytes into genome_index//SA_42 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 99554992 bytes into genome_index//SA_22 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 112169632 bytes into genome_index//SA_38 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 107540880 bytes into genome_index//SA_20 ; empty space on disk = 4025819832573952 bytes ... done
+Writing 161582496 bytes into genome_index//SA_0 ; empty space on disk = 4025815123357696 bytes ...Writing 106682920 bytes into genome_index//SA_28 ; empty space on disk = 4025815123357696 bytes ... done
+ done
+Writing 106560304 bytes into genome_index//SA_24 ; empty space on disk = 4025815123357696 bytes ... done
+Writing 98616632 bytes into genome_index//SA_32 ; empty space on disk = 4025815123357696 bytes ...Writing 108726888 bytes into genome_index//SA_40 ; empty space on disk = 4025815123357696 bytes ...Writing 83498504 bytes into genome_index//SA_49 ; empty space on disk = 4025815123357696 bytes ... done
+Writing 93237128 bytes into genome_index//SA_29 ; empty space on disk = 4025815123357696 bytes ... done
+ done
+ done
+Writing 107567368 bytes into genome_index//SA_37 ; empty space on disk = 4025815123357696 bytes ...Writing 102664888 bytes into genome_index//SA_35 ; empty space on disk = 4025815123357696 bytes ... done
+Writing 114405528 bytes into genome_index//SA_16 ; empty space on disk = 4025815123357696 bytes ...Writing 114394632 bytes into genome_index//SA_41 ; empty space on disk = 4025815123357696 bytes ... done
+ done
+ done
+Writing 113240184 bytes into genome_index//SA_44 ; empty space on disk = 4025815123357696 bytes ...Writing 113077200 bytes into genome_index//SA_25 ; empty space on disk = 4025815123357696 bytes ... done
+ done
+Writing 114228496 bytes into genome_index//SA_21 ; empty space on disk = 4025815123357696 bytes ...Writing 288 bytes into genome_index//SA_62 ; empty space on disk = 4025815123357696 bytes ... done
+ done
+Writing 115704584 bytes into genome_index//SA_33 ; empty space on disk = 4025815123357696 bytes ... done
+Writing 106001704 bytes into genome_index//SA_8 ; empty space on disk = 4025815123357696 bytes ... done
+Writing 92092280 bytes into genome_index//SA_39 ; empty space on disk = 4025814687780864 bytes ... done
+Writing 101708120 bytes into genome_index//SA_15 ; empty space on disk = 4025814687780864 bytes ... done
+Writing 115762648 bytes into genome_index//SA_51 ; empty space on disk = 4025814687780864 bytes ... done
+Writing 94780696 bytes into genome_index//SA_26 ; empty space on disk = 4025814687780864 bytes ... done
+Writing 97584880 bytes into genome_index//SA_27 ; empty space on disk = 4025814687780864 bytes ...Writing 113893600 bytes into genome_index//SA_13 ; empty space on disk = 4025814687780864 bytes ... done
+ done
+Writing 111729272 bytes into genome_index//SA_46 ; empty space on disk = 4025814687780864 bytes ... done
+Writing 115762648 bytes into genome_index//SA_47 ; empty space on disk = 4025814687780864 bytes ...Writing 101625648 bytes into genome_index//SA_34 ; empty space on disk = 4025814687780864 bytes ... done
+ done
+Writing 102251168 bytes into genome_index//SA_31 ; empty space on disk = 4025814687780864 bytes ... done
+Writing 60584368 bytes into genome_index//SA_59 ; empty space on disk = 4025809428054016 bytes ... done
+Writing 60050568 bytes into genome_index//SA_58 ; empty space on disk = 4025809428054016 bytes ... done
+Writing 97654656 bytes into genome_index//SA_56 ; empty space on disk = 4025810101096448 bytes ...Writing 108733808 bytes into genome_index//SA_60 ; empty space on disk = 4025810101096448 bytes ... done
+ done
+Writing 113313864 bytes into genome_index//SA_57 ; empty space on disk = 4025810101096448 bytes ... done
+Writing 161582496 bytes into genome_index//SA_61 ; empty space on disk = 4025807763394560 bytes ... done
+Jun 25 20:54:53 ... loading chunks from disk, packing SA...
+Jun 25 20:55:02 ... finished generating suffix array
+Jun 25 20:55:02 ... generating Suffix Array index
+Jun 25 20:55:37 ... completed Suffix Array index
+Jun 25 20:55:37   Finished preparing junctions
+Jun 25 20:55:37 ..... inserting junctions into the genome indices
+Jun 25 20:55:41   Finished SA search: number of new junctions=92925, old junctions=0
+Jun 25 20:55:57   Finished sorting SA indicesL nInd=55382994
+Genome size with junctions=427816319  400031744   27784575
+GstrandBit1=32   GstrandBit=32
+Jun 25 20:56:08   Finished inserting junction indices
+Jun 25 20:56:13   Finished SAi
+Jun 25 20:56:13 ..... finished inserting junctions into genome
+Jun 25 20:56:13 ... writing Genome to disk ...
+Writing 427816319 bytes into genome_index//Genome ; empty space on disk = 4025784518332416 bytes ... done
+SA size in bytes: 3521831044
+Jun 25 20:56:14 ... writing Suffix Array to disk ...
+Writing 3521831044 bytes into genome_index//SA ; empty space on disk = 4025784518332416 bytes ... done
+Jun 25 20:56:16 ... writing SAindex to disk
+Writing 8 bytes into genome_index//SAindex ; empty space on disk = 4025784548044800 bytes ... done
+Writing 112 bytes into genome_index//SAindex ; empty space on disk = 4025784548044800 bytes ... done
+Writing 391468371 bytes into genome_index//SAindex ; empty space on disk = 4025784548044800 bytes ... done
+Jun 25 20:56:17 ..... finished successfully
+DONE: Genome generation, EXITING

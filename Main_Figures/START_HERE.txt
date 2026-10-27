@@ -1,42 +1,42 @@
-Final main figure package
-17 October 2026
+Main figure package
+Original package: 17 October 2026
+Final review update: 26 October 2026 (comments 25 and 26)
 
-Final numbering: Figures 1-6.
-Figure_Index.tsv lists every final PDF, high-resolution PNG, script and source table.
-Figure_Numbering_Map.tsv maps the previous numbering to the final numbering.
+Final numbering: Figures 1-6. Figure_Index.tsv lists the PDFs, high-resolution
+PNGs, plotting scripts, caption files and source tables. Every figure folder
+contains its current individual PDF and 300-dpi PNG for manuscript use.
 
-For manuscript figures, use the individual PDF (vector where available) or PNG in
-each Figure folder. Every folder has one final PDF/PNG pair and a current caption.txt.
-Main_Figure_Captions.docx preserves species italics, italic statistical P and log subscripts;
-the matching .txt file provides plain editable text. The combined PDF
-Main_Figures_Preview.pdf presents all 6 figures with their captions.
+Figure 5 was reformatted as three vertically stacked panels on a 180 x 203 mm
+canvas; its ten complete gene identifiers are 9 pt. Figure 6 remains 180 x 240 mm,
+with its nineteen panel-c identifiers increased to 10 pt and more row spacing.
+Values, candidate identities, ordering, colors, classes and axis ranges are
+preserved. All seven original source TSVs are byte-identical to the baseline.
+Figures 1-4 retain their original artwork and plotting scripts.
 
-The final figure numbers match the approved six-main-figure manuscript. Captions
-are taken from the approved manuscript or its approved supplementary caption records.
-The study's frozen estimates, DEG classes, enrichment rows and candidate identifiers
-are unchanged. Only final numbering and necessary display consistency were updated.
+Main_Figures_Preview.pdf has nine pages. Figures 5 and 6 use full-size figure
+pages followed by separate caption pages so their labels are not reduced to fit
+long legends. All pages were visually checked. Imported artwork is explicitly
+clipped and placed behind the heading/caption layer.
 
-To rebuild the individual figures in a Python 3 environment:
+captions.json is the canonical caption source. The individual caption.txt files,
+Main_Figure_Captions.txt and Main_Figure_Captions.docx include the previously
+approved revisions. The Word file preserves species italics, italic statistical
+P and log subscripts. No caption wording changed during the label-size repair.
+
+To rebuild captions and the combined preview:
     python -m pip install -r requirements.txt
-    python rebuild_all.py --outdir rebuilt_figures
-To rebuild the combined preview from the packaged figure PDFs:
+    python build_captions.py
     python build_preview.py
+To rebuild individual figures in another output directory:
+    python rebuild_all.py --outdir rebuilt_figures
 
-All 6 plot.py scripts were executed using local frozen inputs and checked against
-the supplied production PNGs. Rebuilt PNGs match the final production pixels.
-PDF creation metadata can differ between runs. No differential-expression model,
-enrichment test, alignment or secretion prediction was rerun for these packages.
-SHA256SUMS.txt identifies the distributed files; regenerated files can acquire new
-hashes even when their displayed content agrees.
+Export_Audit.json records the current display and source-identity checks.
+Reproduction_Audit.json preserves the original 17 October baseline audit;
+its historical PNG comparisons predate the authorized Figure 5/6 display changes.
+SHA256SUMS.txt identifies all distributed files. PDF creation metadata can differ
+between runs. No alignment, expression fit, enrichment test, secretion prediction
+or MEROPS search was rerun for this display revision.
 
 Original code and associated documentation use the MIT License in LICENSE.
 This does not relicense research data, reference databases or third-party resources.
 The Figure 1 photograph retains its separate CC BY 4.0 attribution.
-
-Figure 1 uses the accepted 15 October revision. Figure 5 has lowercase a/b/c panel
-letters matching its caption; the remaining artwork pixels are unchanged.
-
-Repository delivery note: all final PDF/PNG artwork and both combined preview PDFs
-are included, together with every script, caption and frozen input. The publication
-masters match the final figure ZIP packages. See docs/MASTER_FILE_UPLOAD_LIST.tsv
-at repository root for the four separately uploaded master-file paths.

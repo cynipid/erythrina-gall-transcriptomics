@@ -1,4 +1,4 @@
-"""Rebuild the figure-and-caption PDF from this package's PDFs and captions.json."""
+"""Rebuild the preview with clipped artwork below its heading/caption layer."""
 import io
 import json
 from pathlib import Path
@@ -75,7 +75,11 @@ c.save()
 pdf = fitz.open(stream=buffer.getvalue(), filetype='pdf')
 for page, asset, rect in placements:
     with fitz.open(asset) as source:
-        pdf[page].show_pdf_page(fitz.Rect(rect), source, 0)
+        target = fitz.Rect(rect)
+        assert target.y0 >= 75, 'Artwork must remain below the heading area'
+        pdf[page].show_pdf_page(
+            target, source, 0, overlay=False, clip=source[0].rect
+        )
 output = ROOT / DATA['output_name']
 pdf.save(output, garbage=4, deflate=True)
 print(output.name, len(pdf), 'pages')

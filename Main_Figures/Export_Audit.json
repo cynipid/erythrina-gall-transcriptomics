@@ -1,0 +1,107 @@
+{
+  "review_comments": [
+    25,
+    26
+  ],
+  "date": "2026-10-26",
+  "page_count": 9,
+  "pages": [
+    {
+      "page": 1,
+      "heading": "Main Figures",
+      "visual_check": true
+    },
+    {
+      "page": 2,
+      "heading": "Figure 1",
+      "visual_check": true
+    },
+    {
+      "page": 3,
+      "heading": "Figure 2",
+      "visual_check": true
+    },
+    {
+      "page": 4,
+      "heading": "Figure 3",
+      "visual_check": true
+    },
+    {
+      "page": 5,
+      "heading": "Figure 4",
+      "visual_check": true
+    },
+    {
+      "page": 6,
+      "heading": "Figure 5",
+      "visual_check": true
+    },
+    {
+      "page": 7,
+      "heading": "Figure 5 caption",
+      "visual_check": true
+    },
+    {
+      "page": 8,
+      "heading": "Figure 6",
+      "visual_check": true
+    },
+    {
+      "page": 9,
+      "heading": "Figure 6 caption",
+      "visual_check": true
+    }
+  ],
+  "figure5_layout": "180 x 203 mm; three vertically stacked panels",
+  "figure6_layout": "180 x 240 mm; four panels; enlarged panel-c identifier labels",
+  "identifier_checks": {
+    "5": {
+      "identifier_count": 10,
+      "preview_font_pt": 8.806679725646973,
+      "native_font_pt": 9
+    },
+    "6": {
+      "identifier_count": 19,
+      "preview_font_pt": 9.785200119018555,
+      "native_font_pt": 10
+    }
+  },
+  "source_TSVs_byte_identical": [
+    {
+      "path": "Figure_1/Figure_1_source_data.tsv",
+      "sha256": "7816e0e323f58f6c4dfa05367a1d53285b30e59c2ea64f693f650e7442d06484"
+    },
+    {
+      "path": "Figure_2/Figure_2_source_data.tsv",
+      "sha256": "5cc7670059f6d4b2cc7022a1f0db10657c8c3fc2bcae8adb39d8c079c7fcb77c"
+    },
+    {
+      "path": "Figure_3/Figure_3_source_data.tsv",
+      "sha256": "b37043bf3aa0c72a77f74fe7040cf78153a2acb897de6d52111f67e518708e08"
+    },
+    {
+      "path": "Figure_4/Figure_4_source_data.tsv",
+      "sha256": "ff9b3ba06d3594bfe64bd67dd00aa41c3ef9ddc4679393f7ade9f14ea1a62639"
+    },
+    {
+      "path": "Figure_5/Figure_5_source_data.tsv",
+      "sha256": "17a42863b100a0670553c7b577e94a852f3c15be48a742f3090c0d6a8f205a47"
+    },
+    {
+      "path": "Figure_5/plant_refined_mask_defense_candidate_gene_summary.tsv",
+      "sha256": "b1d99b378d9f69a0d1fbd9b20bb0d21f81e01e33aeb4f01b36fcebf831778d6a"
+    },
+    {
+      "path": "Figure_6/Figure_6_source_data.tsv",
+      "sha256": "e954fc477389e8492109d3d3d66a79f074a94e8ea52fa73203db3a7c5e724ba3"
+    }
+  ],
+  "figures_1_to_4_byte_identical": true,
+  "caption_wording_unchanged_from_comment25": true,
+  "caption_pages_separate_for": [
+    5,
+    6
+  ],
+  "plotted_values_classes_colors_order_and_axis_ranges_preserved": true,
+  "no_statistical_analysis_rerun": true
+}

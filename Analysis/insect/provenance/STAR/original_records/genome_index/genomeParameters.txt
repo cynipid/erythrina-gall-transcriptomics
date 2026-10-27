@@ -1,0 +1,19 @@
+### /opt/conda/bin/STAR   --runMode genomeGenerate      --runThreadN 56   --genomeDir genome_index   --genomeFastaFiles ref/complete.genomic.fna      --genomeSAindexNbases 13   --sjdbGTFfile ref/complete.genomic.gtf   --sjdbOverhang 149
+### GstrandBit 32
+versionGenome	2.7.4a
+genomeType	Full
+genomeFastaFiles	ref/complete.genomic.fna 
+genomeSAindexNbases	13
+genomeChrBinNbits	18
+genomeSAsparseD	1
+genomeTransformType	None
+genomeTransformVCF	-
+sjdbOverhang	149
+sjdbFileChrStartEnd	- 
+sjdbGTFfile	ref/complete.genomic.gtf
+sjdbGTFchrPrefix	-
+sjdbGTFfeatureExon	exon
+sjdbGTFtagExonParentTranscript	transcript_id
+sjdbGTFtagExonParentGene	gene_id
+sjdbInsertSave	Basic
+genomeFileSizes	427816319 3521831044

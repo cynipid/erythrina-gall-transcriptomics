@@ -1,0 +1,98 @@
+{
+  "software_version": "featureCounts 2.1.1",
+  "exon_records": 210705,
+  "locus_tag_groups": 14966,
+  "raw_count_rows": 14966,
+  "final_matrix_rows": 14966,
+  "sample_columns": 6,
+  "count_cells_compared": 89796,
+  "mismatched_count_cells": 0,
+  "checks": {
+    "every_exon_has_one_nonempty_locus_tag": true,
+    "no_duplicate_raw_gene_ids": true,
+    "no_duplicate_matrix_gene_ids": true,
+    "all_annotation_ids_and_raw_count_ids_agree": true,
+    "all_matrix_ids_and_raw_count_ids_agree": true,
+    "all_exon_coordinate_and_strand_multisets_agree": true,
+    "all_union_exon_lengths_agree": true,
+    "all_raw_and_final_count_cells_agree": true,
+    "raw_and_matrix_sample_order_agree": true,
+    "metadata_sample_order_agrees": true,
+    "log_feature_total_agrees": true,
+    "log_group_total_agrees": true,
+    "column_sums_match_summary_assigned": true,
+    "column_sums_match_log_assigned": true,
+    "summary_totals_match_log_total_alignments": true,
+    "warning_retained_for_three_strand_runs": true,
+    "software_version_recorded": true,
+    "executed_options_match_reported_options": true
+  },
+  "all_checks_passed": true,
+  "samples": [
+    {
+      "original_id": "L1",
+      "manuscript_label": "L1",
+      "assigned_count": 35474182,
+      "summary_total_alignments": 41296988,
+      "assignment_rate": 0.8590016782822031
+    },
+    {
+      "original_id": "L3",
+      "manuscript_label": "L2",
+      "assigned_count": 37349162,
+      "summary_total_alignments": 43349931,
+      "assignment_rate": 0.8615737358382416
+    },
+    {
+      "original_id": "L4",
+      "manuscript_label": "L3",
+      "assigned_count": 32139868,
+      "summary_total_alignments": 38765848,
+      "assignment_rate": 0.8290768719931008
+    },
+    {
+      "original_id": "P3",
+      "manuscript_label": "P1",
+      "assigned_count": 32821829,
+      "summary_total_alignments": 39569079,
+      "assignment_rate": 0.8294817526584332
+    },
+    {
+      "original_id": "P4",
+      "manuscript_label": "P2",
+      "assigned_count": 30648117,
+      "summary_total_alignments": 36739690,
+      "assignment_rate": 0.8341963963223424
+    },
+    {
+      "original_id": "P5",
+      "manuscript_label": "P3",
+      "assigned_count": 29378276,
+      "summary_total_alignments": 35544571,
+      "assignment_rate": 0.8265193579070064
+    }
+  ],
+  "warning": "Warning: Unknown annotation format: GFF. GTF format is used.",
+  "command_header": "# Program:featureCounts v2.1.1; Command:\"/opt/conda/bin/featureCounts\" \"-T\" \"28\" \"-p\" \"--countReadPairs\" \"-B\" \"-C\" \"-F\" \"GFF\" \"-t\" \"exon\" \"-g\" \"locus_tag\" \"-s\" \"2\" \"-a\" \"ref/complete.genomic.gff\" \"-o\" \"counts/gene_counts_s2.txt\" \"alignments/L1/L1.sorted.bam\" \"alignments/L3/L3.sorted.bam\" \"alignments/L4/L4.sorted.bam\" \"alignments/P3/P3.sorted.bam\" \"alignments/P4/P4.sorted.bam\" \"alignments/P5/P5.sorted.bam\" ",
+  "source_sha256": {
+    "01_reference/complete.genomic.gff": "b652a711fe2fbc9d6acb9c24cd342f69d042a70027beb158f386bed02dec81f4",
+    "03_truba_scripts_logs/logs/featurecounts_strand_test_5981196.out": "9794194cd6e519ed61d7a28b1550779282f7962effbf0a382bea3dfcc65ea4e3",
+    "03_truba_scripts_logs/logs/featurecounts_strand_test_5981196.err": "8e4ce8925e54ef82b5f8f0733f4e6560c6e4e9dd6d0b3e01d7c1ab7d7f768b23",
+    "06_counts/gene_counts_s2.txt": "d92a19c70187465750beca4dff0f29cc7a963ad381ec4b9a34f65ea70299ba65",
+    "06_counts/gene_counts_s2.txt.summary": "a9c033a7fbd46ad0d91333234b12f10e86dacfbc523d0e69dc795e4ee3b9fb76",
+    "06_counts/gene_counts_matrix.tsv": "3c089ed4d098af5100d3c73a2f7fb1d73ce77eaaf1ae10eae9901f27995ce84d",
+    "06_counts/sample_metadata.tsv": "9aa4da092a346a912b5df8b06c8a8e0e2e0d2335988f15f60aad81bcebd73ef3"
+  },
+  "missing_or_ambiguous_locus_tag_lines": [],
+  "duplicate_raw_ids": [],
+  "duplicate_matrix_ids": [],
+  "gene_mismatches": {
+    "annotation_ids_without_raw_counts": [],
+    "matrix_ids_without_raw_counts": [],
+    "raw_ids_without_matrix": [],
+    "coordinate_or_strand_mismatch": [],
+    "union_length_mismatch": [],
+    "matrix_mismatch_genes": []
+  },
+  "scope": "Existing annotation/count records only. No BAM recount or downstream analysis rerun."
+}

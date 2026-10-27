@@ -1,0 +1,30 @@
+featureCounts annotation and matrix audit for review comment 8
+Exon records: 210,705
+Unique locus_tag groups: 14,966
+Count cells compared: 89,796
+Count-cell mismatches: 0
+All recorded checks passed: True
+
+every_exon_has_one_nonempty_locus_tag: True
+no_duplicate_raw_gene_ids: True
+no_duplicate_matrix_gene_ids: True
+all_annotation_ids_and_raw_count_ids_agree: True
+all_matrix_ids_and_raw_count_ids_agree: True
+all_exon_coordinate_and_strand_multisets_agree: True
+all_union_exon_lengths_agree: True
+all_raw_and_final_count_cells_agree: True
+raw_and_matrix_sample_order_agree: True
+metadata_sample_order_agrees: True
+log_feature_total_agrees: True
+log_group_total_agrees: True
+column_sums_match_summary_assigned: True
+column_sums_match_log_assigned: True
+summary_totals_match_log_total_alignments: True
+warning_retained_for_three_strand_runs: True
+software_version_recorded: True
+executed_options_match_reported_options: True
+
+The historical warning and exact executed command are retained.
+Annotation comparison includes repeated exon records, chromosomes, coordinates, strands and union lengths.
+Assignment-rate denominators are the featureCounts-reported Total alignments.
+No BAM recount, DESeq2 fit, enrichment analysis or candidate selection was rerun.

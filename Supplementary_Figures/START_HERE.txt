@@ -1,44 +1,35 @@
-Final supplementary figure package
-17 October 2026
+Supplementary figure package
+Original package: 17 October 2026
+Final review update: 26 October 2026 (comment 26)
 
-Final numbering: Supplementary Figures S1-S8.
-Figure_Index.tsv lists every final PDF, high-resolution PNG, script and source table.
-Figure_Numbering_Map.tsv maps the previous numbering to the final numbering.
+Final numbering: Supplementary Figures S1-S8. Figure_Index.tsv lists every PDF,
+PNG, script and source table. All individual figure PDFs, PNGs, plotting scripts
+and frozen inputs are byte-identical to the supplied baseline (55 non-caption
+files). No plot, coefficient, classification or sample label was changed.
 
-For manuscript figures, use the individual PDF (vector where available) or PNG in
-each Figure folder. Every folder has one final PDF/PNG pair and a current caption.txt.
-Supplementary_Figure_Captions.docx preserves species italics, italic statistical P and log subscripts;
-the matching .txt file provides plain editable text. The combined PDF
-EGW_Supplementary_Figures_S1-S8.pdf presents all 8 figures with their captions.
+The nine-page EGW_Supplementary_Figures_S1-S8.pdf was regenerated with imported
+artwork explicitly clipped and placed below headings/captions. Every page was
+visually checked, including the reported pages 4, 5, 7 and 8. Export_Audit.json
+records the current checks. Older audit records retain the original production
+and source-extraction provenance.
 
-The final figure numbers match the approved six-main-figure manuscript. Captions
-are taken from the approved manuscript or its approved supplementary caption records.
-The study's frozen estimates, DEG classes, enrichment rows and candidate identifiers
-are unchanged. Only final numbering and necessary display consistency were updated.
+captions.json is the canonical caption source. The S3/S4/S7/S8 captions include
+the previously approved estimated, unshrunk fold-change criterion wording.
+The eight caption.txt files, Supplementary_Figure_Captions.txt and the Word file
+are synchronized. Species/statistical P italics and log subscripts are preserved.
 
-To rebuild the individual figures in a Python 3 environment:
+To rebuild captions and the combined preview:
     python -m pip install -r requirements.txt
-    python rebuild_all.py --outdir rebuilt_figures
-To rebuild the combined preview from the packaged figure PDFs:
+    python build_captions.py
     python build_preview.py
+To rebuild individual figures in another output directory:
+    python rebuild_all.py --outdir rebuilt_figures
 
-All 8 plot.py scripts were executed using local frozen inputs and checked against
-the supplied production PNGs. Rebuilt PNGs match the final production pixels.
-PDF creation metadata can differ between runs. No differential-expression model,
-enrichment test, alignment or secretion prediction was rerun for these packages.
-SHA256SUMS.txt identifies the distributed files; regenerated files can acquire new
-hashes even when their displayed content agrees.
+S2 and S6 retain their portable correlation-heatmap layouts and frozen matrices.
+The optional S2 RDS source-extraction script uses rdata 1.1.0; ordinary plotting
+reads the supplied source matrix and requires no RDS conversion or model fit.
+No statistical, alignment, annotation or prediction analysis was rerun.
+SHA256SUMS.txt identifies the distributed files; PDF metadata can differ on rebuild.
 
 Original code and associated documentation use the MIT License in LICENSE.
 This does not relicense research data, reference databases or third-party resources.
-The Figure 1 photograph retains its separate CC BY 4.0 attribution.
-
-S2 and S6 have reproducible portable heatmap layouts with unchanged coefficients
-and sample labels. S2 includes the frozen transformed input and an optional source
-extraction script; that optional extraction uses rdata 1.1.0. Ordinary plotting reads
-the supplied source matrix and requires no RDS conversion or model fit.
-
-Repository delivery note: all final PDF/PNG artwork and both combined preview PDFs
-are included, together with every script, caption and frozen input. The publication
-masters match the final figure ZIP packages. See docs/MASTER_FILE_UPLOAD_LIST.tsv
-at repository root for the four separately uploaded master-file paths.

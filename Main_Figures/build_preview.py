@@ -1,4 +1,4 @@
-"""Rebuild the figure-and-caption PDF from this package's PDFs and captions.json."""
+"""Rebuild the preview with clipped artwork below its heading/caption layer."""
 import io
 import json
 from pathlib import Path
@@ -54,28 +54,44 @@ c.showPage()
 
 placements = []
 for i, figure in enumerate(DATA['figures'], 1):
+    page_index = c.getPageNumber() - 1
+    separate_caption = figure.get('caption_on_next_page', False)
     asset = ROOT / figure['folder'] / (figure['stem']+'.pdf')
     with fitz.open(asset) as source:
         iw, ih = source[0].rect.width, source[0].rect.height
     cap = Paragraph(figure['caption_html'], STYLE)
     _, ch = cap.wrap(WIDTH, H)
-    maxheight = min(530, H-95-50-24-ch)
+    maxheight = H-75-48 if separate_caption else min(530, H-95-50-24-ch)
     scale = min(WIDTH/iw, maxheight/ih)
     fw, fh = iw*scale, ih*scale
     left, top = (W-fw)/2, H-75
     bottom = top-fh
     c.setFont('Serif-Bold', 12)
     c.drawString(MARGIN, H-48, figure['label'])
-    cap.drawOn(c, MARGIN, bottom-20-ch)
-    assert bottom-20-ch > 48
-    placements.append((i, asset, [left, H-top, left+fw, H-bottom]))
-    footer(c, i+1)
+    if not separate_caption:
+        cap.drawOn(c, MARGIN, bottom-20-ch)
+        assert bottom-20-ch > 48
+    placements.append((page_index, asset, [left, H-top, left+fw, H-bottom]))
+    footer(c, c.getPageNumber())
     c.showPage()
+    if separate_caption:
+        c.setFont('Serif-Bold', 12)
+        c.drawString(MARGIN, H-48, figure['label']+' caption')
+        assert H-85-ch > 48
+        cap.drawOn(c, MARGIN, H-85-ch)
+        footer(c, c.getPageNumber())
+        c.showPage()
 c.save()
 pdf = fitz.open(stream=buffer.getvalue(), filetype='pdf')
 for page, asset, rect in placements:
     with fitz.open(asset) as source:
-        pdf[page].show_pdf_page(fitz.Rect(rect), source, 0)
+        target = fitz.Rect(rect)
+        assert target.y0 >= 75, 'Artwork must remain below the heading area'
+        # Keep headings and captions in the foreground. Explicit clipping also
+        # bounds imported artwork to its original page without changing it.
+        pdf[page].show_pdf_page(
+            target, source, 0, overlay=False, clip=source[0].rect
+        )
 output = ROOT / DATA['output_name']
 pdf.save(output, garbage=4, deflate=True)
 print(output.name, len(pdf), 'pages')

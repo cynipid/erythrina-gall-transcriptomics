@@ -5,6 +5,8 @@ Revision 2026-10-09: retain the ten candidates shown in the manuscript
 and supplied PNG. Correct the prior script/PDF substitution of DN3635
 for DN27036. This script only summarizes existing statuses and plots
 frozen values; it does not fit models, annotate, or select new candidates.
+Display revision 2026-10-26: stack the three panels at a fixed 180 mm width
+and enlarge the ten full gene identifiers to 9 pt. Frozen values are unchanged.
 Requires Python 3, matplotlib, numpy, and pandas.
 Run from any directory: python /path/to/plot.py
 """
@@ -186,24 +188,25 @@ plt.rcParams.update(
         "font.family": "DejaVu Sans",
         "pdf.fonttype": 42,
         "ps.fonttype": 42,
-        "font.size": 9.5,
-        "axes.titlesize": 11.5,
-        "axes.labelsize": 10,
-        "xtick.labelsize": 9,
-        "ytick.labelsize": 9,
-        "legend.fontsize": 8.5,
+        "font.size": 8,
+        "axes.titlesize": 8.5,
+        "axes.labelsize": 8,
+        "xtick.labelsize": 7.7,
+        "ytick.labelsize": 7.8,
+        "legend.fontsize": 7,
         "axes.spines.top": False,
         "axes.spines.right": False,
     }
 )
 
-fig = plt.figure(figsize=(14.2, 10.0), constrained_layout=False)
-grid = fig.add_gridspec(
-    2, 2, height_ratios=[0.84, 1.16], width_ratios=[1.0, 1.0], hspace=0.53, wspace=0.39
-)
-ax_a = fig.add_subplot(grid[0, 0])
-ax_b = fig.add_subplot(grid[0, 1])
-ax_c = fig.add_subplot(grid[1, :])
+WIDTH_MM, HEIGHT_MM = 180, 203
+fig = plt.figure(figsize=(WIDTH_MM / 25.4, HEIGHT_MM / 25.4))
+def axes_mm(left, bottom, width, height):
+    return fig.add_axes([left / WIDTH_MM, bottom / HEIGHT_MM,
+                         width / WIDTH_MM, height / HEIGHT_MM])
+ax_a = axes_mm(55, 155, 117, 25)
+ax_b = axes_mm(55, 97, 117, 34)
+ax_c = axes_mm(55, 20, 117, 42)
 
 # Panel A: mutually exclusive final status across all 806 unique candidates.
 y = np.arange(len(status_order))
@@ -227,12 +230,12 @@ for bar, value in zip(bars, status_counts.values):
         bar.get_y() + bar.get_height() / 2,
         f"{value:,}",
         va="center",
-        fontsize=9,
+        fontsize=7.8,
     )
 
 # Panel B: DE direction within each overlapping defense group.
 y = np.arange(len(group_order))
-height = 0.35
+height = 0.40
 gp = ax_b.barh(
     y - height / 2,
     group_de_counts["GP_up"],
@@ -263,13 +266,12 @@ for collection in [gp, up]:
     for bar in collection:
         value = int(bar.get_width())
         if value > 0:
-            ax_b.text(value + 0.7, bar.get_y() + bar.get_height() / 2, str(value), va="center", fontsize=8.5)
-ax_b.text(
-    0.0,
-    -0.20,
+            ax_b.text(value + 0.7, bar.get_y() + bar.get_height() / 2, str(value), va="center", fontsize=7.8)
+fig.text(
+    55 / WIDTH_MM,
+    81 / HEIGHT_MM,
     "Groups overlap; counts must not be summed across categories.",
-    transform=ax_b.transAxes,
-    fontsize=8.3,
+    fontsize=6.8,
     color="#555555",
 )
 
@@ -285,62 +287,63 @@ for candidate_class in class_colors:
     ax_c.scatter(
         selected_df.loc[mask, "refined_mask_host_log2FoldChange"],
         y[mask],
-        s=75,
+        s=28,
         color=class_colors[candidate_class],
         edgecolor="white",
-        linewidth=0.8,
+        linewidth=0.5,
         label=candidate_class,
         zorder=3,
     )
 ax_c.axvline(1, linestyle="--", linewidth=1.0, color="#777777")
 ax_c.set_yticks(y, selected_df["gene_id"])
+ax_c.tick_params(axis="y", labelsize=9, pad=4)
 ax_c.set_xlabel("log₂ fold change (GP / UP)")
 ax_c.set_title(
     "Selected GP-up candidates with classical secretory-pathway evidence",
     loc="left",
     fontweight="bold",
+    pad=24,
 )
 ax_c.grid(axis="x", color="#E3E6E8", linewidth=0.7)
 ax_c.set_axisbelow(True)
 ax_c.set_xlim(0, 14.1)
-ax_c.legend(loc="lower right", frameon=False, ncol=3)
+ax_c.legend(loc="lower left", bbox_to_anchor=(0, 1.025), frameon=False,
+            ncol=3, fontsize=7, columnspacing=1.2, handletextpad=0.3,
+            borderaxespad=0)
 for index, row in selected_df.reset_index(drop=True).iterrows():
     ax_c.text(
         row["refined_mask_host_log2FoldChange"] + 0.18,
         index,
         f'{row["refined_mask_host_log2FoldChange"]:.2f}',
         va="center",
-        fontsize=8.3,
+        fontsize=8,
         color="#333333",
     )
-ax_c.text(
-    0.99,
-    -0.15,
+fig.text(
+    5 / WIDTH_MM,
+    4 / HEIGHT_MM,
     "All displayed candidates were SignalP-positive and lacked a predicted transmembrane region.",
-    transform=ax_c.transAxes,
-    ha="right",
-    fontsize=8.3,
+    ha="left",
+    fontsize=6.6,
     color="#555555",
 )
 
-for label, ax in zip("abc", [ax_a, ax_b, ax_c]):
-    ax.text(-0.14 if label != "c" else -0.065, 1.08, label, transform=ax.transAxes, fontsize=14, fontweight="bold", va="top")
+for label, baseline in zip("abc", [183, 134, 71]):
+    fig.text(5 / WIDTH_MM, baseline / HEIGHT_MM, label,
+             fontsize=10.5, fontweight="bold", va="baseline")
 
 fig.suptitle(
     "Focused plant-defense candidates in galled and ungalled petioles",
-    x=0.07,
+    x=5 / WIDTH_MM,
     ha="left",
-    y=0.985,
-    fontsize=15,
+    y=198 / HEIGHT_MM,
+    fontsize=10.5,
     fontweight="bold",
 )
-fig.subplots_adjust(left=0.20, right=0.975, top=0.92, bottom=0.085)
-
-fig.savefig(args.outdir / "Figure_5.pdf", bbox_inches="tight")
+fig.savefig(args.outdir / "Figure_5.pdf")
 fig.savefig(
     args.outdir / "Figure_5.png",
     dpi=300,
-    bbox_inches="tight",
     pil_kwargs={"compress_level": 6},
 )
 plt.close(fig)

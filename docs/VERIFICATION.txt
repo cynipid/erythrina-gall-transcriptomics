@@ -1,3 +1,45 @@
+2026-10-26 REVIEW SYNCHRONIZATION
+The current organization remains six main figures and eight supplementary figures.
+Both combined preview PDFs contain nine pages. Main Figure 5 is 180 x 203 mm,
+with three vertically stacked panels and 9 pt complete gene identifiers. Main
+Figure 6 is 180 x 240 mm, with four panels and 10 pt complete identifiers in panel c.
+Main Figures 5 and 6 have separate following caption pages; their identifiers are
+approximately 8.81 and 9.79 pt in the combined preview.
+
+Main_Figures/Export_Audit.json records visual checks of all nine preview pages,
+all seven main source TSVs remaining byte-identical to the preceding approved
+package, and unchanged Figures 1-4. Candidate selection, plotted values, classes,
+colors, order and axis ranges are preserved in the revised Figure 5/6 display.
+Supplementary_Figures/Export_Audit.json records visual checks of all nine pages,
+all 55 non-caption figure-folder files remaining byte-identical, and agreement
+between canonical caption JSON, individual captions, combined TXT and DOCX.
+Supplementary S3/S4/S7/S8 captions clarify the estimated, unshrunk fold-change
+filter. The previously reported supplementary obscuring was not reproduced;
+the rebuilt pages were nevertheless checked in MuPDF and Poppler. No claim is
+made that a specific underlying rendering fault was diagnosed.
+
+Each collection now includes build_captions.py, with python-docx==1.2.0 recorded
+in its requirements and the root requirements. Earlier reproduction audits remain
+dated historical evidence; they are not current pixel-identity assertions for
+the intentionally revised Figure 5/6 artwork.
+
+Analysis/insect/provenance/ archives retained STAR mapping and featureCounts
+assignment evidence. Analysis/plant/sample_expression/ supplies a portable
+32-cluster expression extraction from frozen final normalized-count/statistics
+inputs. Analysis/supplementary_tables/ contains the revised S2 and S13 workbooks.
+These additions document existing analyses; alignments, count assignment,
+DESeq2 fitting, enrichment and secretion/MEROPS prediction/search were not rerun.
+The original 806-candidate S13 inventory is retained.
+See the README and validation records in each new directory for exact scope.
+
+The existing v1.1.0 release remains frozen. Cite the exact resulting synchronization
+commit (full SHA), or an actually created later release, for this current snapshot.
+
+HISTORICAL VERIFICATION RECORDS
+The text below is preserved from the 17 October repository snapshot. Statements
+about artwork identity, panel-letter-only changes, file counts and analysis-tree
+contents describe those earlier snapshots, not the complete current repository.
+
 2026-10-17 FINAL FIGURE CONSOLIDATION
 The final layout contains six main figures and eight supplementary figures.
 All fourteen plotting scripts were executed from frozen packaged inputs in isolated
@@ -20,3 +62,4 @@ EARLIER VERIFICATION RECORDS (the figure numbers below belong to their original 
 2026-10-17: Documentation-only update added approved GEO accession GSE351178, consolidated the root README and corrected outdated input-availability statements in the analysis READMEs. The incoming archive contained 245 files. Its scientific data and analysis/plotting scripts were not modified. All 244 entries in the incoming checksum manifest matched, including .gitignore. The checksum manifest was regenerated for the documented snapshot. This update did not repeat figure builds or scientific analyses.
 
 2026-10-17: The incoming 246-file snapshot includes the MIT LICENSE with copyright 2026 Serdar Dinc. All 244 previously listed checksum entries matched. The original LICENSE bytes were preserved and added to the refreshed 245-entry manifest. README license scope and the license checklist entry were updated. Scientific data and code were unchanged; no analyses or figure builds were rerun.
+

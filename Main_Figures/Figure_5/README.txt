@@ -1,9 +1,11 @@
-Figure 5
+Figure 5: display revision, 26 October 2026
 
-Files: Figure_5.pdf (vector PDF), Figure_5.png (full-resolution PNG), plot.py, caption.txt and adjacent frozen source input(s).
+The three panels are stacked on a 180 x 203 mm canvas. Panel c shows the same ten
+candidate identifiers at 9 pt, with at least 4.24 mm row spacing. Selection,
+values, labels, classes, colors, ordering and axis ranges are unchanged.
+The frozen 806-cluster overlay and Figure_5_source_data.tsv remain unchanged.
+
 Rebuild: python plot.py
-Test without overwriting archived outputs: python plot.py --outdir /path/to/test_output
-The script resolves frozen inputs relative to itself and runs from any working directory. No differential-expression fitting, PCA, enrichment, secretion prediction, MEROPS search, or other statistical analysis is performed.
-
-Dependencies are documented in the script header and the package requirements.txt.
-The script uses the frozen 806-gene defense overlay and regenerates the figure source-summary TSV in the chosen output directory. Ten displayed candidates include TRINITY_DN27036_c0_g1; the obsolete TRINITY_DN3635_c0_g1 substitution is absent. Lowercase panel labels match the approved caption. No candidate or numeric value changed.
+Write elsewhere: python plot.py --outdir /path/to/test_output
+The script resolves its frozen overlay relative to itself. It only summarizes
+existing classifications and redraws them; no expression analysis is fitted.

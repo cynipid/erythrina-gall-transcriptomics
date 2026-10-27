@@ -1,0 +1,18 @@
+{
+  "plant_gene_normalized_counts_host_focused_refined_mask.tsv": {
+    "sha256_uncompressed": "681597846e59d65f7e95bf5b2b13ca53f0e1296e7f450dd30702acc717543225",
+    "path": "inputs/plant_gene_normalized_counts_host_focused_refined_mask.tsv.gz",
+    "sha256_compressed": "64abf1070718a2c8d7d421665cbb9b243a479b5d80b5b1df98c9c20912a0c627",
+    "bytes_uncompressed": 3014478,
+    "bytes_compressed": 1339626,
+    "rows": 24734
+  },
+  "plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_all.tsv": {
+    "sha256_uncompressed": "8044144366d2df22100c59c5e93577e65f781fbb0321628c75985599f8cc605f",
+    "path": "inputs/plant_gene_DESeq2_GP_vs_UP_host_focused_refined_mask_all.tsv.gz",
+    "sha256_compressed": "d6f6136075365ccffc52c89dec6feb6b16b07dd0bd54f3b0c9dd103586140078",
+    "bytes_uncompressed": 3399687,
+    "bytes_compressed": 1396479,
+    "rows": 24734
+  }
+}
